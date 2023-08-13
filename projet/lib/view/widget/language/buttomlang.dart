@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:projet/core/constant/color.dart';
 import 'package:flutter/material.dart';
 

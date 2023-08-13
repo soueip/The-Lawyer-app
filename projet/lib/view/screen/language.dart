@@ -26,12 +26,11 @@ class Language extends GetView<LocaleController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 150,
-                height: 150,
+                width: 160,
+                height: 160,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(
-                        AppImageAsset.logo), // Set the logo image here
+                    image: AssetImage(AppImageAsset.logo),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -50,7 +49,7 @@ class Language extends GetView<LocaleController> {
                     CustomButtonLang(
                       textbutton: "Arabic",
                       backgroundColor: AppColor.gold,
-                      textColor: AppColor.bleu, // Set text color
+                      textColor: AppColor.bleu,
                       onPressed: () {
                         controller.changeLang("ar");
                         Get.toNamed(AppRoute.onBoarding);

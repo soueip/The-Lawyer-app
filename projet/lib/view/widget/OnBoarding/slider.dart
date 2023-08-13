@@ -28,7 +28,7 @@ class OnboardingSlider extends GetView<OnboardingControllerImp> {
             child: Text(
               onBoardingList[i].title!,
               textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline2,
             ),
           ),
           const SizedBox(height: 10),
