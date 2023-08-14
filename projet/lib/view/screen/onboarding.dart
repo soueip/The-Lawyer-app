@@ -23,7 +23,7 @@ class OnBoarding extends StatelessWidget {
               child: OnboardingSlider(),
             ),
             Expanded(
-              flex: 1,
+              flex: 0,
               child: Row(
                 children: const [
                   OnboardingControllerwid(),

@@ -4,10 +4,11 @@ import 'package:projet/core/constant/routes.dart';
 
 abstract class SignUpController extends GetxController {
   signup();
-  goToSignIn();
+  goToverifSignIn();
 }
 
 class SignUpControllerImp extends SignUpController {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController name;
   late TextEditingController email;
   late TextEditingController phonenumber;
@@ -15,11 +16,16 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController confirmpassword;
   @override
   signup() {
-    Get.offNamed(AppRoute.checkemail);
+    if (formstate.currentState!.validate()) {
+      Get.offNamed(AppRoute.verifsignup);
+      Get.delete<SignUpController>();
+    } else {
+      print("cest pas valide");
+    }
   }
 
   @override
-  goToSignIn() {
+  goToverifSignIn() {
     Get.offNamed(AppRoute.login);
   }
 

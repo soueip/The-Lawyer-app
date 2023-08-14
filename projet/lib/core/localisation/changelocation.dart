@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:projet/core/constant/apptheme.dart';
 import 'package:projet/core/services/services.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:get/get.dart';
 
 class LocaleController extends GetxController {
@@ -7,9 +9,13 @@ class LocaleController extends GetxController {
 
   MyServices myServices = Get.find();
 
+  ThemeData appTheme = themeFrensh;
+
   changeLang(String langcode) {
     Locale locale = Locale(langcode);
     myServices.sharedPreferences.setString("lang", langcode);
+    appTheme = langcode == "ar" ? themeArabe : themeFrensh;
+    Get.changeTheme(appTheme);
     Get.updateLocale(locale);
   }
 
@@ -17,11 +23,14 @@ class LocaleController extends GetxController {
   void onInit() {
     String? sharedPrefLang = myServices.sharedPreferences.getString("lang");
     if (sharedPrefLang == "ar") {
+      appTheme = themeArabe;
       language = const Locale("ar");
-    } else if (sharedPrefLang == "en") {
-      language = const Locale("en");
+    } else if (sharedPrefLang == "fr") {
+      language = const Locale("fr");
+      appTheme = themeFrensh;
     } else {
       language = Locale(Get.deviceLocale!.languageCode);
+      appTheme = themeFrensh;
     }
     super.onInit();
   }

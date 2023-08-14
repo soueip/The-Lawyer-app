@@ -14,34 +14,36 @@ class OnboardingSlider extends GetView<OnboardingControllerImp> {
         controller.onPageChanged(val);
       },
       itemCount: onBoardingList.length,
-      itemBuilder: (context, i) => Column(
+      itemBuilder: (context, i) => Stack(
         children: [
           Image.asset(
             onBoardingList[i].image!,
-            width: 410,
-            height: 370,
+            width: 450,
+            height: Get.width / 1.05,
             fit: BoxFit.fill,
           ),
-          const SizedBox(height: 10),
-          SizedBox(
-            width: 370,
-            child: Text(
-              onBoardingList[i].title!,
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.headline2,
-            ),
-          ),
-          const SizedBox(height: 10),
-          Container(
-            width: double.infinity,
-            alignment: Alignment.center,
-            child: SizedBox(
-              width: 370,
-              child: Text(
-                onBoardingList[i].body!,
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
+          Positioned(
+            top: 370,
+            left: 20, // Adjust the left value as needed
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 360,
+                  child: Text(
+                    onBoardingList[i].title!,
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Container(
+                  width: 370,
+                  child: Text(
+                    onBoardingList[i].body!,
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

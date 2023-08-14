@@ -7,12 +7,15 @@ class TextFormAuth extends StatelessWidget {
   final String text;
   final TextEditingController mycontroller;
 
+  final String? Function(String?)? valid;
+
   const TextFormAuth({
     Key? key,
     required this.hinttext,
     required this.iconData,
     required this.mycontroller,
     required this.text,
+    this.valid,
   }) : super(key: key);
 
   @override
@@ -30,6 +33,7 @@ class TextFormAuth extends StatelessWidget {
             ),
           ),
           TextFormField(
+            validator: valid,
             controller: mycontroller,
             decoration: InputDecoration(
               hintText: hinttext,

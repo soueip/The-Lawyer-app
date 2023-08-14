@@ -8,10 +8,18 @@ abstract class ForgetPasswordController extends GetxController {
 }
 
 class ForgetPasswordControllerImp extends ForgetPasswordController {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController email;
 
   @override
-  checkemail() {}
+  checkemail() {
+    var formdata = formstate.currentState;
+    if (formdata!.validate()) {
+      print("cest  valide");
+    } else {
+      print("cest pas valide");
+    }
+  }
 
   @override
   goToVerfiyCode() {

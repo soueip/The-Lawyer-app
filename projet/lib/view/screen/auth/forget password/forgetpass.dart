@@ -6,6 +6,7 @@ import 'package:projet/view/widget/auth/authbutom.dart';
 import 'package:projet/view/widget/auth/logoauth.dart';
 import 'package:projet/view/widget/auth/textformauth.dart';
 import 'package:projet/view/widget/auth/titleauth.dart';
+import 'package:projet/core/functions/validinput.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
@@ -28,27 +29,33 @@ class ForgetPassword extends StatelessWidget {
       body: Container(
         color: AppColor.lightwhite,
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-        child: ListView(
-          children: [
-            const LogoAuth(),
-            const Titleauth(
-              headline: "Check Email",
-              text:
-                  "Please Enter Your Email Address To Recive A Verification Code",
-            ),
-            const SizedBox(height: 20),
-            TextFormAuth(
-                text: "Email",
-                hinttext: "Enter Your Email",
-                iconData: Icons.email_outlined,
-                mycontroller: controller.email),
-            AuthButom(
-              text: "Check",
-              onPressed: () {
-                controller.goToVerfiyCode();
-              },
-            ),
-          ],
+        child: Form(
+          key: controller.formstate,
+          child: ListView(
+            children: [
+              const LogoAuth(),
+              const Titleauth(
+                headline: "Check Email",
+                text:
+                    "Please Enter Your Email Address To Recive A Verification Code",
+              ),
+              const SizedBox(height: 20),
+              TextFormAuth(
+                  valid: (val) {
+                    return validInput(val!, "email", 5, 25);
+                  },
+                  text: "Email",
+                  hinttext: "Enter Your Email",
+                  iconData: Icons.email_outlined,
+                  mycontroller: controller.email),
+              AuthButom(
+                text: "Check",
+                onPressed: () {
+                  controller.goToVerfiyCode();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

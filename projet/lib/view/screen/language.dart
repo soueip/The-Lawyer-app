@@ -47,7 +47,7 @@ class Language extends GetView<LocaleController> {
                     ),
                     const SizedBox(height: 10),
                     CustomButtonLang(
-                      textbutton: "Arabic",
+                      textbutton: "Arabe",
                       backgroundColor: AppColor.gold,
                       textColor: AppColor.bleu,
                       onPressed: () {
@@ -56,11 +56,11 @@ class Language extends GetView<LocaleController> {
                       },
                     ),
                     CustomButtonLang(
-                      textbutton: "English",
+                      textbutton: "Français",
                       backgroundColor: AppColor.bleu,
                       textColor: AppColor.gold,
                       onPressed: () {
-                        controller.changeLang("en");
+                        controller.changeLang("fr");
                         Get.toNamed(AppRoute.onBoarding);
                       },
                     ),

@@ -1,35 +1,52 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:projet/controller/auth/sucessignup.dart';
 import 'package:projet/core/constant/color.dart';
+import 'package:projet/view/widget/auth/authbutom.dart';
+
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:projet/view/widget/auth/logoauth.dart';
+import 'package:projet/view/widget/auth/titleauth.dart';
 
 class SuccessSignUp extends StatelessWidget {
   const SuccessSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SuccessSignUpController controller = Get.put(SuccessSignUpControllerImp());
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(kToolbarHeight),
-        child: AppBar(
-          backgroundColor: AppColor.lightwhite,
-          elevation: 0.0,
-          title: Text('Success', style: Theme.of(context).textTheme.headline4),
-          centerTitle: true,
-        ),
-      ),
       body: Container(
-        padding: const EdgeInsets.all(15),
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Center(
-                child: Icon(
-                  Icons.check_circle_outlined,
-                  size: 200,
-                  color: AppColor.darkbleu,
-                ),
+        color: AppColor.lightwhite,
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+        child: ListView(
+          children: [
+            const LogoAuth(),
+            SizedBox(
+              height: 50,
+            ),
+            Center(
+              child: FaIcon(
+                FontAwesomeIcons.solidCheckCircle,
+                size: 70,
+                color: Color(0xff29CA8C),
               ),
-            ]),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Titleauth(
+              headline: "Compte Créé Avec Succès",
+              text: "Get help to write a will, make a power of attorney",
+            ),
+            const SizedBox(height: 20),
+            AuthButom(
+              text: "Go To Login",
+              onPressed: () {
+                controller.goToLogin();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

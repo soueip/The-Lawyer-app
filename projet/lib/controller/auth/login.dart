@@ -9,14 +9,21 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController email;
   late TextEditingController password;
   @override
-  login() {}
+  login() {
+    if (formstate.currentState!.validate()) {
+      print("cest  valide");
+    } else {
+      print("cest pas valide");
+    }
+  }
 
   @override
   goToSignUp() {
-    Get.toNamed(AppRoute.signUp);
+    Get.offNamed(AppRoute.signUp);
   }
 
   @override

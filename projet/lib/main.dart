@@ -4,7 +4,11 @@ import 'package:projet/core/constant/color.dart';
 import 'package:projet/core/localisation/changelocation.dart';
 import 'package:projet/core/localisation/translation.dart';
 import 'package:projet/routes.dart';
+import 'package:projet/view/screen/auth/forget%20password/resetpassword.dart';
+import 'package:projet/view/screen/auth/forget%20password/successpage.dart';
+import 'package:projet/view/screen/auth/login.dart';
 import 'package:projet/view/screen/language.dart';
+import 'package:projet/view/screen/onboarding.dart';
 
 import 'core/services/services.dart';
 
@@ -26,39 +30,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       locale: controller.language,
-      theme: ThemeData(
-        fontFamily: "RedHatDisplay",
-        textTheme: const TextTheme(
-          headline1: TextStyle(
-              fontSize: 30,
-              color: AppColor.lightwhite,
-              fontWeight: FontWeight.bold),
-          headline2: TextStyle(
-              fontSize: 21,
-              color: AppColor.lightwhite,
-              fontWeight: FontWeight.bold),
-          headline3: TextStyle(
-              fontSize: 35, color: AppColor.bleu, fontWeight: FontWeight.bold),
-          headline4: TextStyle(
-              fontSize: 21, color: AppColor.bleu, fontWeight: FontWeight.bold),
-          bodyText1: TextStyle(
-              height: 1.5,
-              fontSize: 15,
-              color: AppColor.lightwhite,
-              fontWeight: FontWeight.normal),
-          bodyText2: TextStyle(
-              height: 1.5,
-              fontSize: 15,
-              color: AppColor.bleu,
-              fontWeight: FontWeight.normal),
-          headline5: TextStyle(
-              height: 1.5,
-              fontSize: 15,
-              color: AppColor.gold,
-              fontWeight: FontWeight.normal),
-        ),
-        primarySwatch: Colors.blue,
-      ),
+      theme: controller.appTheme,
       home: const Language(),
       routes: routes,
     );
