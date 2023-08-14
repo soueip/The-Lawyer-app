@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:projet/controller/auth/forgetpasswordcontroller.dart';
+import 'package:projet/controller/auth/resetpassword.dart';
+
 import 'package:projet/core/constant/color.dart';
 import 'package:projet/view/widget/auth/authbutom.dart';
 import 'package:projet/view/widget/auth/logoauth.dart';
 import 'package:projet/view/widget/auth/textformauth.dart';
+
 import 'package:projet/view/widget/auth/titleauth.dart';
 
-class VerfiyCode extends StatelessWidget {
-  const VerfiyCode({super.key});
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordControllerImp controller =
-        Get.put(ForgetPasswordControllerImp());
+    ResetPasswordControllerImp controller =
+        Get.put(ResetPasswordControllerImp());
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: AppBar(
           backgroundColor: AppColor.lightwhite,
           elevation: 0.0,
-          title: Text('Verification Code ',
+          title: Text('Reset Password',
               style: Theme.of(context).textTheme.headline4),
           centerTitle: true,
         ),
@@ -31,20 +33,26 @@ class VerfiyCode extends StatelessWidget {
         child: ListView(
           children: [
             const LogoAuth(),
-            Titleauth(
-              headline: "Check Code",
-              text:
-                  "Enter the verification code we just sent you on your e-mail ",
+            const Titleauth(
+              headline: "Change Password",
+              text: "",
             ),
             const SizedBox(height: 20),
             TextFormAuth(
-                text: "Email",
-                hinttext: "Enter Your Email",
+                text: "New Password",
+                hinttext: " New password",
                 iconData: Icons.email_outlined,
-                mycontroller: controller.email),
+                mycontroller: controller.newpassword),
+            TextFormAuth(
+                text: "Confirm Your Password",
+                hinttext: "Confirm  your password",
+                iconData: Icons.email_outlined,
+                mycontroller: controller.confirmnewpassword),
             AuthButom(
               text: "Check",
-              onPressed: () {},
+              onPressed: () {
+                controller.goToSuccesspage();
+              },
             ),
           ],
         ),

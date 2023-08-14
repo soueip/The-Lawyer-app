@@ -76,6 +76,7 @@ dependencies:
   google_sign_in: 
   device_preview: 
   responsive_builder: 
+  flutter_otp_text_field: 
 
 dev_dependencies:
   flutter_test:

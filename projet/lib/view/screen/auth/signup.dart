@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:projet/controller/auth/signupcontroller.dart';
+import 'package:projet/controller/auth/signup.dart';
 import 'package:projet/core/constant/color.dart';
 import 'package:projet/view/widget/auth/authbutom.dart';
 import 'package:projet/view/widget/auth/logoauth.dart';
-import 'package:projet/view/widget/auth/textcolored.dart';
 import 'package:projet/view/widget/auth/textformauth.dart';
 import 'package:projet/view/widget/auth/titleauth.dart';
 
@@ -68,16 +67,11 @@ class SignUp extends StatelessWidget {
             ),
             AuthButom(
               text: "Create New Account",
-              onPressed: () {},
-            ),
-            Textcolored(
-              text1: "You have account already ? ",
-              text2: "Sign In",
-              onTap: () {
-                controller.goToSignIn();
+              onPressed: () {
+                controller.signup();
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
           ],

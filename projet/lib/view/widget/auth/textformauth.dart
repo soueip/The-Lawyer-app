@@ -7,7 +7,7 @@ class TextFormAuth extends StatelessWidget {
   final String text;
   final TextEditingController mycontroller;
 
-  TextFormAuth({
+  const TextFormAuth({
     Key? key,
     required this.hinttext,
     required this.iconData,

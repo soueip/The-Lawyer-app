@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'package:projet/controller/auth/successpage.dart';
+
 import 'package:projet/core/constant/color.dart';
 import 'package:projet/view/widget/auth/authbutom.dart';
 import 'package:projet/view/widget/auth/logoauth.dart';
 
 import 'package:projet/view/widget/auth/titleauth.dart';
 
-class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key});
+class SuccessPage extends StatelessWidget {
+  const SuccessPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //ForgetPasswordControllerImp controller =
-    //Get.put(ForgetPasswordControllerImp());
+    SuccessPageController controller = Get.put(SuccessPageControllerImp());
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: AppBar(
           backgroundColor: AppColor.lightwhite,
           elevation: 0.0,
-          title: Text('Forget Password',
-              style: Theme.of(context).textTheme.headline4),
+          title: Text('', style: Theme.of(context).textTheme.headline4),
           centerTitle: true,
         ),
       ),
@@ -32,18 +32,15 @@ class ResetPassword extends StatelessWidget {
           children: [
             const LogoAuth(),
             Titleauth(
-              headline: "Check Email",
-              text: "Sign In With Your Email And Password",
+              headline: "Password Changed Successfully",
+              text: "Get help to write a will, make a power of attorney",
             ),
             const SizedBox(height: 20),
-            // TextFormAuth(
-            //     text: "Email",
-            //     hinttext: "Enter Your Email",
-            //     iconData: Icons.email_outlined,
-            //     mycontroller: controller.email),
             AuthButom(
-              text: "Check",
-              onPressed: () {},
+              text: "Login",
+              onPressed: () {
+                controller.goToLogin();
+              },
             ),
           ],
         ),
