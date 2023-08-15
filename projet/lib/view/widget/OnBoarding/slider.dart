@@ -36,7 +36,7 @@ class OnboardingSlider extends GetView<OnboardingControllerImp> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Container(
+                SizedBox(
                   width: 370,
                   child: Text(
                     onBoardingList[i].body!,

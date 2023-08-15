@@ -21,20 +21,20 @@ class SuccessSignUp extends StatelessWidget {
         child: ListView(
           children: [
             const LogoAuth(),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            Center(
+            const Center(
               child: FaIcon(
                 FontAwesomeIcons.solidCheckCircle,
                 size: 70,
                 color: Color(0xff29CA8C),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Titleauth(
+            const Titleauth(
               headline: "Compte Créé Avec Succès",
               text: "Get help to write a will, make a power of attorney",
             ),
