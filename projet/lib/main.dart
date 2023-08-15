@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:projet/core/constant/color.dart';
 import 'package:projet/core/localisation/changelocation.dart';
 import 'package:projet/core/localisation/translation.dart';
 import 'package:projet/routes.dart';
-import 'package:projet/view/screen/auth/forget%20password/resetpassword.dart';
-import 'package:projet/view/screen/auth/forget%20password/successpage.dart';
-import 'package:projet/view/screen/auth/login.dart';
 import 'package:projet/view/screen/language.dart';
-import 'package:projet/view/screen/onboarding.dart';
 
 import 'core/services/services.dart';
 

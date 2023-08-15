@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-String s = "";
-String a = "";
 validInput(
   String val,
   String type,
@@ -13,24 +11,15 @@ validInput(
       return "user name non valide";
     }
   }
-  if (type == "password") {
-    if (s != (val)) {
-      s = val;
-    }
-  }
-  if (type == "confirmpassword") {
-    if ((val) != s) {
-      return "différent mote de pass";
-    }
-  }
+
   if (type == "email") {
     if (!GetUtils.isEmail(val)) {
-      return " non valide";
+      return "email non valide";
     }
   }
   if (type == "phone") {
     if (!GetUtils.isPhoneNumber(val)) {
-      return " name non valide";
+      return " phone non valide";
     }
   }
   if (val.isEmpty) {

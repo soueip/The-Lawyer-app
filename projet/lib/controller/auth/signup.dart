@@ -1,51 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:projet/core/constant/routes.dart';
+import 'package:flutter/cupertino.dart';
 
 abstract class SignUpController extends GetxController {
   signup();
-  goToverifSignIn();
 }
 
 class SignUpControllerImp extends SignUpController {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
-  late TextEditingController name;
+
+  late TextEditingController username;
   late TextEditingController email;
-  late TextEditingController phonenumber;
+  late TextEditingController phone;
   late TextEditingController password;
-  late TextEditingController confirmpassword;
+  bool isVisiblepass = true;
+  showPassword() {
+    isVisiblepass = isVisiblepass == true ? false : true;
+    update();
+  }
+
   @override
   signup() {
     if (formstate.currentState!.validate()) {
       Get.offNamed(AppRoute.verifsignup);
-      Get.delete<SignUpController>();
+      Get.delete<SignUpControllerImp>();
     } else {
-      print("cest pas valide");
+      print("Not Valid");
     }
   }
 
   @override
-  goToverifSignIn() {
-    Get.offNamed(AppRoute.login);
-  }
-
-  @override
   void onInit() {
-    name = TextEditingController();
+    username = TextEditingController();
+    phone = TextEditingController();
     email = TextEditingController();
     password = TextEditingController();
-    phonenumber = TextEditingController();
-    confirmpassword = TextEditingController();
     super.onInit();
   }
 
   @override
   void dispose() {
-    name.dispose();
-    password.dispose();
+    username.dispose();
     email.dispose();
-    phonenumber.dispose();
-    confirmpassword.dispose();
+    phone.dispose();
+    password.dispose();
     super.dispose();
   }
 }

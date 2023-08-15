@@ -6,16 +6,21 @@ class TextFormAuth extends StatelessWidget {
   final IconData iconData;
   final String text;
   final TextEditingController mycontroller;
-
+  final bool isNumber;
+  final bool? obscureText;
+  final void Function()? onTapIcon;
   final String? Function(String?)? valid;
 
   const TextFormAuth({
     Key? key,
+    this.obscureText,
+    this.onTapIcon,
     required this.hinttext,
     required this.iconData,
     required this.mycontroller,
     required this.text,
     this.valid,
+    required this.isNumber,
   }) : super(key: key);
 
   @override
@@ -33,8 +38,13 @@ class TextFormAuth extends StatelessWidget {
             ),
           ),
           TextFormField(
+            keyboardType: isNumber
+                ? const TextInputType.numberWithOptions(decimal: true)
+                : TextInputType.text,
             validator: valid,
             controller: mycontroller,
+            obscureText:
+                obscureText == null || obscureText == false ? false : true,
             decoration: InputDecoration(
               hintText: hinttext,
               hintStyle: const TextStyle(fontSize: 14),
@@ -43,12 +53,15 @@ class TextFormAuth extends StatelessWidget {
                 vertical: 15,
                 horizontal: 10,
               ),
-              suffixIcon: ColorFiltered(
-                colorFilter: const ColorFilter.mode(
-                  AppColor.bleu,
-                  BlendMode.srcIn,
+              suffixIcon: InkWell(
+                onTap: onTapIcon,
+                child: ColorFiltered(
+                  colorFilter: const ColorFilter.mode(
+                    AppColor.bleu,
+                    BlendMode.srcIn,
+                  ),
+                  child: Icon(iconData),
                 ),
-                child: Icon(iconData),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: const BorderSide(color: AppColor.bleu),

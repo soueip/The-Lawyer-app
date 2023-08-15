@@ -6,4 +6,5 @@ class AppImageAsset {
   static const String onBoardingImageThree = "$rootImages/OnBoardingtwo.PNG";
 
   static const String background = "$rootImages/background.PNG";
+  static const String logout = "$rootImages/logoutlogo.PNG";
 }
