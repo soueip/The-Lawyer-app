@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:projet/core/localisation/changelocation.dart';
 import 'package:projet/core/localisation/translation.dart';
 import 'package:projet/routes.dart';
-import 'package:projet/view/screen/language.dart';
 
 import 'core/services/services.dart';
 
@@ -26,8 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       locale: controller.language,
       theme: controller.appTheme,
-      home: const Language(),
-      routes: routes,
+      getPages: routes,
     );
   }
 }

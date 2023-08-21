@@ -22,7 +22,7 @@ class Login extends StatelessWidget {
         child: AppBar(
           backgroundColor: AppColor.lightwhite,
           elevation: 0.0,
-          title: Text('Sign In', style: Theme.of(context).textTheme.headline4),
+          title: Text("9".tr, style: Theme.of(context).textTheme.headline4),
           centerTitle: true,
         ),
       ),
@@ -36,9 +36,9 @@ class Login extends StatelessWidget {
             child: ListView(
               children: [
                 const LogoAuth(),
-                const Titleauth(
-                  headline: "Hello,\nWelcome Back",
-                  text: "Sign In With Your Email And Password",
+                Titleauth(
+                  headline: "10".tr,
+                  text: "11".tr,
                 ),
                 const SizedBox(height: 20),
                 TextFormAuth(
@@ -46,8 +46,8 @@ class Login extends StatelessWidget {
                   valid: (val) {
                     return validInput(val!, "email", 5, 30);
                   },
-                  text: "Email",
-                  hinttext: "Enter Your Email",
+                  text: "12".tr,
+                  hinttext: "13".tr,
                   iconData: Icons.email_outlined,
                   mycontroller: controller.email,
                 ),
@@ -61,8 +61,8 @@ class Login extends StatelessWidget {
                     onTapIcon: () {
                       controller.showPassword();
                     },
-                    text: "Password",
-                    hinttext: "Enter Your Password",
+                    text: "14".tr,
+                    hinttext: "15".tr,
                     iconData: Icons.visibility,
                     mycontroller: controller.password,
                   ),
@@ -72,20 +72,20 @@ class Login extends StatelessWidget {
                     controller.goToForgetPassword();
                   },
                   child: Text(
-                    "Forget Password",
+                    "16".tr,
                     textAlign: TextAlign.end,
                     style: Theme.of(context).textTheme.headline5,
                   ),
                 ),
                 AuthButom(
-                  text: "Sign In",
+                  text: "17".tr,
                   onPressed: () {
                     controller.login();
                   },
                 ),
                 Textcolored(
-                  text1: "Don't have an account?",
-                  text2: "Create Account",
+                  text1: "18".tr,
+                  text2: "19".tr,
                   onTap: () {
                     controller.goToSignUp();
                   },

@@ -22,7 +22,7 @@ class OnboardingButton extends GetView<OnboardingControllerImp> {
           borderRadius: BorderRadius.circular(15.0),
         ),
         child: Text(
-          "Next",
+          "8".tr,
           style: Theme.of(context).textTheme.bodyText1,
         ),
       ),

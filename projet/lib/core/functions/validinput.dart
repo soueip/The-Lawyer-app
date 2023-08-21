@@ -26,7 +26,7 @@ validInput(
     return "  valeur est vide";
   }
   if (val.length < min) {
-    return "  minimum est $val";
+    return "  minimum est $min";
   }
   if (val.length > max) {
     return "  minimum est $max";
