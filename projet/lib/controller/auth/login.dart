@@ -38,13 +38,23 @@ class LoginControllerImp extends LoginController {
   Future<void> login() async {
     if (formstate.currentState!.validate()) {
       try {
-        // Simulate a successful login
-        await Future.delayed(Duration(seconds: 2));
+        await Future.delayed(const Duration(seconds: 1));
 
-        // Navigate to the homepage on successful login
-        Get.offAllNamed(AppRoute.homepage);
+        // Extracting the email entered by the user
+        String userEmail = email.text.toLowerCase(); // Convert to lowercase
+
+        // Check for specific keywords in the email and navigate accordingly
+        if (userEmail.contains('expert')) {
+          Get.offAllNamed(AppRoute.expertHomepage);
+        } else if (userEmail.contains('admin')) {
+          Get.offAllNamed(AppRoute.adminHomepage);
+        } else if (userEmail.contains('manager')) {
+          Get.offAllNamed(AppRoute.managerHomepage);
+        } else {
+          Get.offAllNamed(AppRoute.clientHomepage);
+        }
       } catch (e) {
-        // Show a snackbar or alert to inform the user about the error
+        // Show an error message to the user
         Get.snackbar(
           snackPosition: SnackPosition.BOTTOM,
           'Error',

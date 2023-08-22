@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:projet/binding/initbinding.dart';
 import 'package:projet/core/localisation/changelocation.dart';
 import 'package:projet/core/localisation/translation.dart';
 import 'package:projet/routes.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       locale: controller.language,
       theme: controller.appTheme,
+      initialBinding: InitialBindings(),
       getPages: routes,
     );
   }

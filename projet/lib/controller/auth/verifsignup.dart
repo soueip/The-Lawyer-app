@@ -16,9 +16,4 @@ class VerfiySignUpControllerImp extends VerfiySignUpController {
   goTosuccesssignup() {
     Get.offNamed(AppRoute.successsignup);
   }
-
-  @override
-  void onInit() {
-    super.onInit();
-  }
 }
