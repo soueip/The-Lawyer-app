@@ -15,8 +15,7 @@ class CarouselWidget extends StatelessWidget {
     return Column(
       children: [
         _buildCarouselSlider(),
-        const SizedBox(
-            height: 20), // Add spacing between carousel and indicators
+        const SizedBox(height: 15),
         _buildCarouselIndicators(),
       ],
     );

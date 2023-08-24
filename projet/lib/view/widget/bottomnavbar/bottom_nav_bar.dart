@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projet/core/constant/color.dart';
 import 'package:projet/view/widget/appbar.dart';
-import 'package:projet/data/datasource/static/statick.dart';
+import '../../../data/datasource/static/statick.dart';
 import 'addbutton.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -20,38 +20,37 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarWidget(),
-      body: Stack(
-        children: [
-          IndexedStack(
-            index: _currentIndex,
-            children: widget.screens,
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              color: Colors.white,
-              height: 60,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: navBarItems.map((item) {
-                  final index = navBarItems.indexOf(item);
-                  return IconButton(
-                    iconSize: _currentIndex == index ? 30 : 25,
-                    icon: item.icon,
-                    color: _currentIndex == index ? AppColor.bleu : Colors.grey,
-                    onPressed: () {
-                      setState(() {
-                        _currentIndex = index;
-                      });
-                    },
-                  );
-                }).toList(),
-              ),
-            ),
-          ),
-          AddButton(),
-        ],
+      body: IndexedStack(
+        index: _currentIndex,
+        children: widget.screens,
       ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 1,
+              blurRadius: 5,
+              offset: const Offset(0, -3),
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: Colors.transparent,
+          selectedItemColor: AppColor.bleu,
+          unselectedItemColor: Colors.grey,
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          items: navBarItems,
+        ),
+      ),
+      floatingActionButton: AddButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

@@ -19,9 +19,9 @@ class TicketCard extends StatelessWidget {
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       color: AppColor.gris,
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 7.0),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(10.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -40,17 +40,25 @@ class TicketCard extends StatelessWidget {
                 const SizedBox(height: 4.0),
                 Text(
                   "Status: $status",
-                  style: const TextStyle(fontSize: 14),
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ],
             ),
             const SizedBox(width: 90.0),
-            Image.asset(
-              AppImageAsset.cardimage,
-              fit: BoxFit.cover,
-              width: 70,
-              height: 60,
-            )
+            // Wrap the image with Transform.scale to make it slightly larger
+            Transform.scale(
+              alignment: Alignment.bottomLeft,
+              scale: 1.8, // Adjust the scale factor as needed
+              child: Image.asset(
+                AppImageAsset.cardimage,
+                fit: BoxFit.cover,
+                width: 60,
+                height: 60,
+              ),
+            ),
           ],
         ),
       ),

@@ -17,6 +17,7 @@ class Offrecard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
+      color: AppColor.goldy,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Padding(
@@ -52,6 +53,7 @@ class Offrecard extends StatelessWidget {
                   Text(
                     description,
                     style: TextStyle(
+                      fontWeight: FontWeight.w500,
                       fontSize: 14,
                       color: Colors.grey, // Use a muted color for description
                     ),

@@ -46,6 +46,7 @@ List<BottomNavigationBarItem> navBarItems = [
     label: 'Profile',
   ),
 ];
+
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
       title: "2".tr, body: "3".tr, image: AppImageAsset.onBoardingImageOne),

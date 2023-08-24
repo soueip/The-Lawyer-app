@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:projet/controller/client/homepage.dart';
 import 'package:projet/data/datasource/static/statick.dart';
-import 'package:projet/view/widget/client/carousel.dart';
-import 'package:projet/view/widget/client/textcolored.dart';
-import '../../widget/client/offrecard.dart';
-import '../../widget/client/ticketcard.dart';
+import 'package:projet/view/widget/client/homepage/carousel.dart';
+
+import '../../widget/client/homepage/offrecard.dart';
+import '../../widget/client/homepage/textcolored.dart';
+import '../../widget/client/homepage/ticketcard.dart';
 
 class ClientHomepage extends StatelessWidget {
   final ClientHomepageController controller =
@@ -34,6 +35,13 @@ class ClientHomepage extends StatelessWidget {
           const Offrecard(
             nom: "Offre 1",
             description: "5 ticket vous pouver envoyer a nos experts",
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            child: Text(
+              "Blog",
+              style: Theme.of(context).textTheme.headline4,
+            ),
           ),
         ],
       ),
