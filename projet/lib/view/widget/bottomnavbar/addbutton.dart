@@ -9,7 +9,7 @@ class AddButton extends StatelessWidget {
     double buttonXPosition = MediaQuery.of(context).size.width / 2 - 30;
 
     return Positioned(
-      bottom: 40,
+      bottom: 35,
       left: buttonXPosition,
       child: GestureDetector(
         onTap: () {

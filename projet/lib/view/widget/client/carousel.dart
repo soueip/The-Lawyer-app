@@ -25,7 +25,7 @@ class CarouselWidget extends StatelessWidget {
   Widget _buildCarouselSlider() {
     return CarouselSlider(
       options: CarouselOptions(
-        height: 200,
+        height: 150,
         viewportFraction: 0.95,
         autoPlay: true,
         autoPlayInterval: const Duration(seconds: 3),

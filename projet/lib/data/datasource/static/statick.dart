@@ -33,17 +33,17 @@ List<OnBoardingModel> onBoardingList = [
 
 List<Map<String, dynamic>> carouselItems = [
   {
-    'image': AppImageAsset.onBoardingImageOne,
+    'image': AppImageAsset.carouselImageone,
     'text': 'Welcome to Page 1',
     'subtitle': 'Subtitle 1',
   },
   {
-    'image': AppImageAsset.onBoardingImageTow,
+    'image': AppImageAsset.carouselImagetwo,
     'text': 'Welcome to Page 2',
     'subtitle': 'Subtitle 2',
   },
   {
-    'image': AppImageAsset.onBoardingImageThree,
+    'image': AppImageAsset.carouselImageThree,
     'text': 'Welcome to Page 3',
     'subtitle': 'Subtitle 3',
   },

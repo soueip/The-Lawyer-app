@@ -7,7 +7,7 @@ import 'addbutton.dart';
 class BottomNavBar extends StatefulWidget {
   final List<Widget> screens;
 
-  BottomNavBar({Key? key, required this.screens}) : super(key: key);
+  const BottomNavBar({Key? key, required this.screens}) : super(key: key);
 
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
@@ -19,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: const AppBarWidget(),
       body: Stack(
         children: [
           IndexedStack(

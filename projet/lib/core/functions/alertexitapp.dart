@@ -28,14 +28,14 @@ Future<bool> alertExitApp() async {
       ElevatedButton(
         style: ButtonStyle(
           elevation: MaterialStateProperty.all(0),
-          backgroundColor: MaterialStateProperty.all(AppColor.lightwhite),
+          backgroundColor: MaterialStateProperty.all(AppColor.gris),
         ),
         onPressed: () {
           Get.back();
         },
         child: const Text(
           "Annulée",
-          style: TextStyle(color: AppColor.gris),
+          style: TextStyle(color: AppColor.bleu),
         ),
       ),
     ],
