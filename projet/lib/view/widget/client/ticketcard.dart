@@ -16,34 +16,40 @@ class TicketCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      color: AppColor.gris, // Use app color.gray here
-      margin: const EdgeInsets.symmetric(horizontal: 16.0),
+      color: AppColor.gris,
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(16.0),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const FaIcon(
               FontAwesomeIcons.ticketAlt,
               color: AppColor.red,
             ),
-            const SizedBox(width: 16.0),
+            const SizedBox(width: 36.0),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headline4,
                 ),
-                Text("Status: $status"),
+                const SizedBox(height: 4.0),
+                Text(
+                  "Status: $status",
+                  style: const TextStyle(fontSize: 14),
+                ),
               ],
             ),
+            const SizedBox(width: 90.0),
             Image.asset(
               AppImageAsset.cardimage,
               fit: BoxFit.cover,
-              width: 90,
-              height: 70,
+              width: 70,
+              height: 60,
             )
           ],
         ),

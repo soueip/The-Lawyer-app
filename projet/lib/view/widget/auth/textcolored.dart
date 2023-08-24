@@ -15,7 +15,9 @@ class Textcolored extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(text1),
+        Text(
+          text1,
+        ),
         InkWell(
           onTap: onTap,
           child: Text(

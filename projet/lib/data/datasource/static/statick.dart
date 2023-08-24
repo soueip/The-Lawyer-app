@@ -4,6 +4,30 @@ import 'package:get/get_utils/get_utils.dart';
 import 'package:projet/core/constant/imageasset.dart';
 import 'package:projet/data/model/onboarding.dart';
 
+List<Map<String, dynamic>> offreList = [
+  {
+    'nom': 'Offre 1',
+    'description': 'Offre de test',
+    'price': 750,
+    'nbTickets': 3,
+    'period': 5,
+  },
+  {
+    'nom': 'Offre 2',
+    'description': 'Another offer description',
+    'price': 1200,
+    'nbTickets': 5,
+    'period': 7,
+  },
+  {
+    'nom': 'Offre 3',
+    'description': 'Special offer for a limited time',
+    'price': 500,
+    'nbTickets': 2,
+    'period': 3,
+  },
+];
+
 List<BottomNavigationBarItem> navBarItems = [
   const BottomNavigationBarItem(
     icon: Icon(Icons.home),
