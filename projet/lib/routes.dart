@@ -23,6 +23,7 @@ import 'package:projet/view/screen/auth/signup.dart';
 import 'package:projet/view/widget/bottomnavbar/bottom_nav_bar.dart';
 
 import 'core/middleware/mymiddleware.dart';
+import 'data/datasource/static/statick.dart';
 
 List<GetPage<dynamic>>? routes = [
   GetPage(
@@ -38,6 +39,7 @@ List<GetPage<dynamic>>? routes = [
           )
       // middlewares: [MyMiddleWare()],
       ),
+
   GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),
   //auth
   GetPage(name: AppRoute.login, page: () => const Login()),
