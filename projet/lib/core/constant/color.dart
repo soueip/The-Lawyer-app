@@ -9,5 +9,6 @@ class AppColor {
   static const Color red = Color(0xffF12D2D);
   static const Color gris = Color(0xffEEF7FA);
   static const Color goldy = Color(0xffFBF9F4);
+  static const Color redy = Color(0xffFDEAEA);
   static const Color marron = Color(0xffF1ECE2);
 }

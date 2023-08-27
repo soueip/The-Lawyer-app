@@ -4,20 +4,49 @@ import 'package:get/get_utils/get_utils.dart';
 import 'package:projet/core/constant/imageasset.dart';
 import 'package:projet/data/model/onboarding.dart';
 
+import '../../model/blog.dart';
+
+List<Map<String, dynamic>> allTickets = [
+  {
+    'name': 'ser9a',
+    'statu': 'open',
+    'assignedto': 'chakib lazghab',
+    'dates': DateTime(2023, 8, 27),
+    'question': 'kifch njem nchki b3bed sra9ni',
+  },
+  {
+    'name': 'arth',
+    'statu': 'closed',
+    'assignedto': 'Mohamed bganda',
+    'dates': DateTime(2023, 8, 27),
+    'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
+  },
+];
+
+List<BloglistModel> bloglist = [
+  BloglistModel(
+    'Loi de chômage',
+    'Vous pouvez avoir de l\'argent si vous \n êtes au chômage',
+    AppImageAsset.onBoardingImageOne,
+    'Financière',
+    '32 Sep, 2023',
+  ),
+  BloglistModel(
+    'Loi de chômage',
+    'Vous pouvez avoir de l\'argent si vous êtes au chômage',
+    AppImageAsset.onBoardingImageOne,
+    'Financière',
+    '32 Sep, 2023',
+  ),
+];
+
 List<Map<String, dynamic>> offreList = [
   {
-    'nom': 'Offre 1',
-    'description': 'Offre de test',
+    'nom': 'Small Offre',
+    'description': 'Special offer for a limited time',
     'price': 750,
     'nbTickets': 3,
     'period': 5,
-  },
-  {
-    'nom': 'Offre 2',
-    'description': 'Another offer description',
-    'price': 1200,
-    'nbTickets': 5,
-    'period': 7,
   },
   {
     'nom': 'Offre 3',

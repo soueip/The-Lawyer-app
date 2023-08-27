@@ -3,40 +3,44 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:projet/core/constant/color.dart';
 import 'package:projet/core/constant/imageasset.dart';
 
-class TicketCard extends StatelessWidget {
-  const TicketCard({
+class BlogCard extends StatelessWidget {
+  const BlogCard({
     Key? key,
     required this.title,
-    required this.status,
+    required this.description,
+    required this.blogimage,
   }) : super(key: key);
 
   final String title;
-  final String status;
+  final String description;
+  final blogimage;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      color: AppColor.gris,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(
+          color: AppColor.gris, // Border color
+          width: 2, // Border width
+        ),
+      ),
+      color: AppColor.lightwhite,
       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 7.0),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              width: 50.0,
-              height: 50.0,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColor.redy,
-              ),
-              child: Center(
-                child: FaIcon(
-                  FontAwesomeIcons.ticketAlt,
-                  color: AppColor.red,
-                ),
+            ClipRRect(
+              borderRadius:
+                  BorderRadius.circular(10), // Adjust the radius as needed
+              child: Image.asset(
+                blogimage,
+                fit: BoxFit.cover,
+                width: 60,
+                height: 60,
               ),
             ),
             const SizedBox(width: 36.0),
@@ -49,24 +53,13 @@ class TicketCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4.0),
                 Text(
-                  "Status: $status",
+                  "$description",
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
               ],
-            ),
-            const SizedBox(width: 60.0),
-            Transform.scale(
-              alignment: Alignment.bottomLeft,
-              scale: 1.8,
-              child: Image.asset(
-                AppImageAsset.cardimage,
-                fit: BoxFit.cover,
-                width: 60,
-                height: 60,
-              ),
             ),
           ],
         ),

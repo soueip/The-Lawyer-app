@@ -33,7 +33,7 @@ class Offrecard extends StatelessWidget {
               ),
               child: Center(
                 child: FaIcon(
-                  FontAwesomeIcons.ticketAlt,
+                  FontAwesomeIcons.tag,
                   color: AppColor.gold,
                 ),
               ),

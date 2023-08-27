@@ -12,6 +12,7 @@ import 'package:projet/view/screen/auth/successsignup.dart';
 import 'package:projet/view/screen/auth/verifsignup.dart';
 import 'package:projet/view/screen/client/blog.dart';
 import 'package:projet/view/screen/client/newtickets.dart';
+import 'package:projet/view/screen/client/offre.dart';
 import 'package:projet/view/screen/client/oldtickets.dart';
 import 'package:projet/view/screen/client/profile.dart';
 import 'package:projet/view/screen/expert/experthomepage.dart';
@@ -32,7 +33,6 @@ List<GetPage<dynamic>>? routes = [
             screens: [
               ClientHomepage(),
               Blog(),
-              NewTickets(),
               OldTickets(),
               Profile(),
             ],
@@ -54,6 +54,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.clientHomepage, page: () => ClientHomepage()),
   GetPage(name: AppRoute.oldticket, page: () => OldTickets()),
   GetPage(name: AppRoute.blog, page: () => Blog()),
+  GetPage(name: AppRoute.blog, page: () => Offre()),
   GetPage(name: AppRoute.profile, page: () => Profile()),
 
   GetPage(name: AppRoute.expertHomepage, page: () => const ExpertHomepage()),
