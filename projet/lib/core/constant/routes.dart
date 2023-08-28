@@ -11,6 +11,7 @@ class AppRoute {
   static const String verifsignup = "/verifsignup";
 //client
   static const String clientHomepage = "/clientHomepage";
+  static const String bottomnavbar = "/bottom_nav_bar";
   static const String oldticket = "/oldticket";
   static const String blog = "/blog";
   static const String profile = "/profile";

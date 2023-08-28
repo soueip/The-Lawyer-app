@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:projet/core/constant/color.dart';
 import 'package:projet/view/widget/appbar.dart';
-import '../../../data/datasource/static/statick.dart';
+import '../../../../data/datasource/static/statick.dart';
 import 'addbutton.dart';
 
-class BottomNavBar extends StatefulWidget {
+class BottomNavBarclient extends StatefulWidget {
   final List<Widget> screens;
 
-  const BottomNavBar({Key? key, required this.screens}) : super(key: key);
+  const BottomNavBarclient({Key? key, required this.screens}) : super(key: key);
 
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class _BottomNavBarState extends State<BottomNavBarclient> {
   int _currentIndex = 0;
 
   @override

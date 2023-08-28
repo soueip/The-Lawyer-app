@@ -9,14 +9,28 @@ import '../../model/blog.dart';
 List<Map<String, dynamic>> allTickets = [
   {
     'name': 'ser9a',
-    'statu': 'open',
+    'statu': 'non affecte',
     'assignedto': 'chakib lazghab',
     'dates': DateTime(2023, 8, 27),
     'question': 'kifch njem nchki b3bed sra9ni',
   },
   {
     'name': 'arth',
-    'statu': 'closed',
+    'statu': 'effectue',
+    'assignedto': 'Mohamed bganda',
+    'dates': DateTime(2023, 8, 27),
+    'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
+  },
+  {
+    'name': 'arth',
+    'statu': 'valide',
+    'assignedto': 'Mohamed bganda',
+    'dates': DateTime(2023, 8, 27),
+    'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
+  },
+  {
+    'name': 'arth',
+    'statu': 'clôturer',
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',

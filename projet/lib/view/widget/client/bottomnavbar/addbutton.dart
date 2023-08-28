@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constant/color.dart'; // Adjust the path if needed
-import '../../screen/client/newtickets.dart'; // Adjust the path if needed
+import '../../../../core/constant/color.dart'; // Adjust the path if needed
+import '../../../screen/client/newtickets.dart'; // Adjust the path if needed
 
 class AddButton extends StatelessWidget {
   @override

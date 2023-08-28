@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:projet/data/model/tickets.dart';
-import 'package:intl/intl.dart';
 
 import '../../../data/datasource/static/statick.dart';
+import '../../widget/client/oldTickets/ticketlist.dart';
+
+enum Actions { share, delete, archive }
 
 class OldTickets extends StatefulWidget {
   @override
@@ -33,49 +36,52 @@ class _OldTicketsState extends State<OldTickets> {
               children: [
                 SlidableAction(
                   backgroundColor: Colors.lightGreen,
-                  icon: Icons.share,
+                  icon: FontAwesomeIcons.share,
                   label: 'Share',
-                  onPressed: (context) => _onDismissed(),
+                  onPressed: (context) => _onDismissed(index, Actions.share),
+                ),
+                SlidableAction(
+                  backgroundColor: Colors.blue,
+                  icon: FontAwesomeIcons.archive,
+                  label: 'archive',
+                  onPressed: (context) => _onDismissed(index, Actions.archive),
                 ),
               ],
             ),
-            child: buildTicketListTile(ticket),
+            endActionPane: ActionPane(motion: const BehindMotion(), children: [
+              SlidableAction(
+                backgroundColor: Colors.red,
+                icon: Icons.delete,
+                label: 'delete',
+                onPressed: (context) => _onDismissed(index, Actions.delete),
+              ),
+            ]),
+            child: TicketTile(ticket), // Use the TicketTile widget
           );
         },
       ),
     );
   }
 
-  void _onDismissed() {
-    // Add your logic for when the action is dismissed here
+  void _onDismissed(int index, Actions action) {
+    final ticketData = oldTicketData[index];
+    setState(() => oldTicketData.removeAt(index));
+    final ticketTitle = ticketData['name'];
+    switch (action) {
+      case Actions.delete:
+        _showSnackbar(context, '$ticketTitle is deleted', Colors.red);
+        break;
+      case Actions.archive:
+        _showSnackbar(context, '$ticketTitle is archived', Colors.blue);
+        break;
+      case Actions.share:
+        _showSnackbar(context, '$ticketTitle is shared', Colors.green);
+        break;
+    }
   }
 
-  Widget buildTicketListTile(Ticket ticket) => ListTile(
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-        title: Text(
-          ticket.name,
-          style: Theme.of(context).textTheme.headline4,
-        ),
-        dense: true,
-        onTap: () {
-          // Add logic for handling tile tap
-        },
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 6),
-            Text(
-              'Assigned To: ' + ticket.assignedto + ', statu ' + ticket.statu,
-              style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-            ),
-            SizedBox(height: 4),
-            Text(
-              ticket.question,
-              style: TextStyle(fontSize: 14, color: Colors.grey),
-            ),
-          ],
-        ),
-        isThreeLine: true,
-      );
+  void _showSnackbar(BuildContext context, String message, Color color) {
+    final snackBar = SnackBar(content: Text(message), backgroundColor: color);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
 }

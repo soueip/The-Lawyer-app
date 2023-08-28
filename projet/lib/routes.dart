@@ -11,36 +11,38 @@ import 'package:projet/view/screen/auth/forget%20password/verifycode.dart';
 import 'package:projet/view/screen/auth/successsignup.dart';
 import 'package:projet/view/screen/auth/verifsignup.dart';
 import 'package:projet/view/screen/client/blog.dart';
-import 'package:projet/view/screen/client/newtickets.dart';
 import 'package:projet/view/screen/client/offre.dart';
 import 'package:projet/view/screen/client/oldtickets.dart';
 import 'package:projet/view/screen/client/profile.dart';
 import 'package:projet/view/screen/expert/experthomepage.dart';
 import 'package:projet/view/screen/client/clienthomepage.dart';
 import 'package:projet/view/screen/admin/adminhomepage.dart';
+import 'package:projet/view/screen/language.dart';
 import 'package:projet/view/screen/manager/managerhomepage.dart';
 import 'package:projet/view/screen/onboarding.dart';
 import 'package:projet/view/screen/auth/signup.dart';
-import 'package:projet/view/widget/bottomnavbar/bottom_nav_bar.dart';
+import 'package:projet/view/widget/client/bottomnavbar/bottom_nav_bar.dart';
 
 import 'core/middleware/mymiddleware.dart';
-import 'data/datasource/static/statick.dart';
 
 List<GetPage<dynamic>>? routes = [
   GetPage(
-      name: "/",
-      page: () => BottomNavBar(
-            screens: [
-              ClientHomepage(),
-              Blog(),
-              OldTickets(),
-              Profile(),
-            ],
-          )
-      // middlewares: [MyMiddleWare()],
-      ),
+    name: "/",
+    page: () => const OnBoarding(),
+    middlewares: [MyMiddleWare()],
+  ),
 
-  GetPage(name: AppRoute.onBoarding, page: () => const OnBoarding()),
+  GetPage(
+    name: AppRoute.bottomnavbar,
+    page: () => BottomNavBarclient(
+      screens: [
+        ClientHomepage(),
+        Blog(),
+        OldTickets(),
+        Profile(),
+      ],
+    ),
+  ),
   //auth
   GetPage(name: AppRoute.login, page: () => const Login()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
