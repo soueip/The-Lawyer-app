@@ -3,7 +3,9 @@ import 'package:projet/core/constant/color.dart';
 import 'package:projet/core/constant/imageasset.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarWidget({super.key});
+  final String titleText;
+
+  const AppBarWidget({Key? key, required this.titleText}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,19 +14,38 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       automaticallyImplyLeading: false,
       title: Row(
+        mainAxisAlignment:
+            MainAxisAlignment.spaceBetween, // Align items to start and end
         children: [
-          Image.asset(
-            AppImageAsset.logo,
-            width: 40,
-            height: 40,
+          Container(
+            padding: const EdgeInsets.all(8.0),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: AppColor.goldy,
+            ),
+            child: Image.asset(
+              AppImageAsset.logo,
+              width: 32,
+              height: 32,
+            ),
           ),
           const SizedBox(width: 8),
-        ],
-      ),
-      actions: [
-        Container(
-          margin: const EdgeInsets.only(right: 12),
-          child: Container(
+          Expanded(
+            // Allow the text to take up the available space
+            child: Center(
+              child: Text(
+                titleText,
+                style: const TextStyle(
+                  color: AppColor.bleu,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            // Container for notification icon
+            margin: const EdgeInsets.only(right: 12),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
@@ -46,8 +67,8 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
