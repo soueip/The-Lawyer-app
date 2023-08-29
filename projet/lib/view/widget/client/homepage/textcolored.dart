@@ -6,7 +6,7 @@ class Coloredtext extends StatelessWidget {
   final String rightText;
   final VoidCallback? rightTextOnTap;
 
-  Coloredtext({
+  const Coloredtext({
     required this.leftText,
     required this.rightText,
     this.rightTextOnTap,

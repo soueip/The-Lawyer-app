@@ -43,15 +43,15 @@ class TicketTile extends StatelessWidget {
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 6),
+          const SizedBox(height: 6),
           Text(
             'Status  ' + ticket.statu,
             style: TextStyle(fontSize: 14, color: Colors.grey[600]),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             ticket.question,
-            style: TextStyle(fontSize: 14, color: Colors.grey),
+            style: const TextStyle(fontSize: 14, color: Colors.grey),
           ),
         ],
       ),

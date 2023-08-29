@@ -9,7 +9,10 @@ import '../../widget/client/oldTickets/ticketlist.dart';
 enum Actions { share, delete, archive }
 
 class OldTickets extends StatefulWidget {
+  const OldTickets({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _OldTicketsState createState() => _OldTicketsState();
 }
 
@@ -42,6 +45,7 @@ class _OldTicketsState extends State<OldTickets> {
                 ),
                 SlidableAction(
                   backgroundColor: Colors.blue,
+                  // ignore: deprecated_member_use
                   icon: FontAwesomeIcons.archive,
                   label: 'archive',
                   onPressed: (context) => _onDismissed(index, Actions.archive),

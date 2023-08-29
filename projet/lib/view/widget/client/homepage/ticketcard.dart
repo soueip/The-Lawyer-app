@@ -28,11 +28,11 @@ class TicketCard extends StatelessWidget {
             Container(
               width: 50.0,
               height: 50.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColor.redy,
               ),
-              child: Center(
+              child: const Center(
                 child: FaIcon(
                   FontAwesomeIcons.ticketAlt,
                   color: AppColor.red,

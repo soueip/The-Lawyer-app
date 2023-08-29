@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:projet/core/constant/color.dart';
-import 'package:projet/core/constant/imageasset.dart';
 
 class BlogCard extends StatelessWidget {
   const BlogCard({
@@ -21,9 +19,9 @@ class BlogCard extends StatelessWidget {
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
-        side: BorderSide(
-          color: AppColor.gris, // Border color
-          width: 2, // Border width
+        side: const BorderSide(
+          color: AppColor.gris,
+          width: 2,
         ),
       ),
       color: AppColor.lightwhite,

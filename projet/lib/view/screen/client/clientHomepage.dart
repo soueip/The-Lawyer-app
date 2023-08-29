@@ -16,6 +16,8 @@ class ClientHomepage extends StatelessWidget {
   final ClientHomepageController controller =
       Get.put(ClientHomepageControllerImp());
 
+  ClientHomepage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,7 @@ class ClientHomepage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CarouselWidget(carouselItems: carouselItems),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
@@ -34,14 +36,14 @@ class ClientHomepage extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                Get.to(OldTickets());
+                Get.to(const OldTickets());
               },
-              child: TicketCard(
+              child: const TicketCard(
                 title: "Ticket Title",
                 status: "Open",
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Coloredtext(
               leftText: "Buy New Offer",
               rightText: "See All",
@@ -53,7 +55,7 @@ class ClientHomepage extends StatelessWidget {
               nom: offreList[0]['nom'],
               description: offreList[0]['description'],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Coloredtext(
               leftText: "Blogs",
               rightText: "See All",
@@ -66,7 +68,7 @@ class ClientHomepage extends StatelessWidget {
               description: bloglist[0].description!,
               blogimage: bloglist[0].blogimage!,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:projet/core/constant/color.dart';
-import 'package:projet/core/constant/imageasset.dart';
 
 class Offrecard extends StatelessWidget {
   const Offrecard({
@@ -27,11 +26,11 @@ class Offrecard extends StatelessWidget {
             Container(
               width: 50.0,
               height: 50.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColor.marron,
               ),
-              child: Center(
+              child: const Center(
                 child: FaIcon(
                   FontAwesomeIcons.tag,
                   color: AppColor.gold,
@@ -52,7 +51,7 @@ class Offrecard extends StatelessWidget {
                   const SizedBox(height: 4.0),
                   Text(
                     description,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
                       color: Colors.grey, // Use a muted color for description

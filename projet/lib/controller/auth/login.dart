@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:projet/core/constant/routes.dart';
-import 'package:projet/view/widget/client/bottomnavbar/bottom_nav_bar.dart';
 
 abstract class LoginController extends GetxController {
   void login();

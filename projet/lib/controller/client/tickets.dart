@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:projet/data/model/tickets.dart';
+
 import '../../../data/datasource/static/statick.dart';
 
 enum Actions { share, delete, archive }

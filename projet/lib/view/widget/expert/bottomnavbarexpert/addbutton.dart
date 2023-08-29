@@ -15,18 +15,18 @@ class AddButton extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => NewTickets(),
+              builder: (context) => const NewTickets(),
             ),
           );
         },
         child: Container(
           width: 55,
           height: 55,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: AppColor.gold,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.add,
             color: Colors.white,
           ),

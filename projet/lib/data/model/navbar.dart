@@ -4,7 +4,7 @@ import 'package:projet/view/screen/client/oldtickets.dart';
 import 'package:projet/view/screen/client/profile.dart';
 
 List<Widget> clientScreens = [
-  Blog(),
-  OldTickets(),
-  Profile(),
+  const Blog(),
+  const OldTickets(),
+  const Profile(),
 ];

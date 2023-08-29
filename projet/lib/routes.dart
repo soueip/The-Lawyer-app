@@ -17,11 +17,10 @@ import 'package:projet/view/screen/client/profile.dart';
 import 'package:projet/view/screen/expert/experthomepage.dart';
 import 'package:projet/view/screen/client/clienthomepage.dart';
 import 'package:projet/view/screen/admin/adminhomepage.dart';
-import 'package:projet/view/screen/language.dart';
 import 'package:projet/view/screen/manager/managerhomepage.dart';
 import 'package:projet/view/screen/onboarding.dart';
 import 'package:projet/view/screen/auth/signup.dart';
-import 'package:projet/view/widget/client/bottomnavbar/bottom_nav_bar.dart';
+import 'package:projet/view/widget/client/bottomnavbarclient/bottom_navbar.dart';
 
 import 'core/middleware/mymiddleware.dart';
 
@@ -37,9 +36,9 @@ List<GetPage<dynamic>>? routes = [
     page: () => BottomNavBarclient(
       screens: [
         ClientHomepage(),
-        Blog(),
-        OldTickets(),
-        Profile(),
+        const Blog(),
+        const OldTickets(),
+        const Profile(),
       ],
     ),
   ),
@@ -54,10 +53,10 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.verifsignup, page: () => const VerfiySignUp()),
 //client
   GetPage(name: AppRoute.clientHomepage, page: () => ClientHomepage()),
-  GetPage(name: AppRoute.oldticket, page: () => OldTickets()),
-  GetPage(name: AppRoute.blog, page: () => Blog()),
+  GetPage(name: AppRoute.oldticket, page: () => const OldTickets()),
+  GetPage(name: AppRoute.blog, page: () => const Blog()),
   GetPage(name: AppRoute.blog, page: () => Offre()),
-  GetPage(name: AppRoute.profile, page: () => Profile()),
+  GetPage(name: AppRoute.profile, page: () => const Profile()),
 
   GetPage(name: AppRoute.expertHomepage, page: () => const ExpertHomepage()),
 
