@@ -19,7 +19,6 @@ class _BottomNavBarState extends State<BottomNavBarclient> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarWidget(),
       body: IndexedStack(
         index: _currentIndex,
         children: widget.screens,

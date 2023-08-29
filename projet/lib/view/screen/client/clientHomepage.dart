@@ -6,7 +6,7 @@ import 'package:projet/view/screen/client/blog.dart';
 import 'package:projet/view/screen/client/offre.dart';
 import 'package:projet/view/screen/client/oldtickets.dart';
 import 'package:projet/view/widget/client/homepage/carousel.dart';
-
+import '../../widget/appbar.dart';
 import '../../widget/client/homepage/blogcard.dart';
 import '../../widget/client/homepage/offrecard.dart';
 import '../../widget/client/homepage/textcolored.dart';
@@ -15,12 +15,14 @@ import '../../widget/client/homepage/ticketcard.dart';
 class ClientHomepage extends StatelessWidget {
   final ClientHomepageController controller =
       Get.put(ClientHomepageControllerImp());
-
+  List<Map<String, dynamic>> oldTicketData = allTickets;
   ClientHomepage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarWidget(
+        titleText: '',
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,9 +40,9 @@ class ClientHomepage extends StatelessWidget {
               onTap: () {
                 Get.to(const OldTickets());
               },
-              child: const TicketCard(
-                title: "Ticket Title",
-                status: "Open",
+              child: TicketCard(
+                title: allTickets[0]['name'],
+                status: allTickets[0]['statu'],
               ),
             ),
             const SizedBox(height: 20),

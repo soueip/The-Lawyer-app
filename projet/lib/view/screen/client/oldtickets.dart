@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:projet/data/model/tickets.dart';
 
 import '../../../data/datasource/static/statick.dart';
+import '../../widget/appbar.dart';
 import '../../widget/client/oldTickets/ticketlist.dart';
 
 enum Actions { share, delete, archive }
@@ -22,6 +23,9 @@ class _OldTicketsState extends State<OldTickets> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarWidget(
+        titleText: 'Your Tickets',
+      ),
       body: ListView.builder(
         itemCount: oldTicketData.length,
         itemBuilder: (context, index) {
