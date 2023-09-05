@@ -9,6 +9,7 @@ class AppImageAsset {
   static const String carouselImagetwo = "$rootImages/CarouselImagetwo.png";
   static const String carouselImageThree = "$rootImages/CarouselImagethree.png";
   static const String cardimage = "$rootImages/cardimage.png";
+  static const String experthello = "$rootImages/expert.png";
 
   static const String background = "$rootImages/background.PNG";
   static const String logout = "$rootImages/logoutlogo.PNG";

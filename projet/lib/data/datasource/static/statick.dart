@@ -9,6 +9,7 @@ import '../../model/blog.dart';
 List<Map<String, dynamic>> allTickets = [
   {
     'name': 'ser9a',
+    'clientname': 'ahmed mohamed',
     'statu': 'non affecte',
     'assignedto': 'chakib lazghab',
     'dates': DateTime(2023, 8, 27),
@@ -17,6 +18,7 @@ List<Map<String, dynamic>> allTickets = [
   {
     'name': 'arth',
     'statu': 'effectue',
+    'clientname': 'ahmed mohamed',
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
@@ -24,6 +26,7 @@ List<Map<String, dynamic>> allTickets = [
   {
     'name': 'arth',
     'statu': 'valide',
+    'clientname': 'ahmed mohamed',
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
@@ -31,6 +34,7 @@ List<Map<String, dynamic>> allTickets = [
   {
     'name': 'arth',
     'statu': 'clôturer',
+    'clientname': 'ahmed mohamed',
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
@@ -71,7 +75,7 @@ List<Map<String, dynamic>> offreList = [
   },
 ];
 
-List<BottomNavigationBarItem> navBarItems = [
+List<BottomNavigationBarItem> navBarclientItems = [
   const BottomNavigationBarItem(
     icon: Icon(Icons.home),
     label: 'Home',
@@ -83,6 +87,20 @@ List<BottomNavigationBarItem> navBarItems = [
   const BottomNavigationBarItem(
     icon: Icon(Icons.history),
     label: 'Old Ticket',
+  ),
+  const BottomNavigationBarItem(
+    icon: Icon(Icons.person),
+    label: 'Profile',
+  ),
+];
+List<BottomNavigationBarItem> navBarexpertItems = [
+  const BottomNavigationBarItem(
+    icon: Icon(Icons.home),
+    label: 'Home',
+  ),
+  const BottomNavigationBarItem(
+    icon: Icon(FontAwesomeIcons.ticket),
+    label: 'my tickets',
   ),
   const BottomNavigationBarItem(
     icon: Icon(Icons.person),

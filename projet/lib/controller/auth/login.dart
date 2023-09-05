@@ -45,7 +45,7 @@ class LoginControllerImp extends LoginController {
 
         // Check for specific keywords in the email and navigate accordingly
         if (userEmail.contains('expert')) {
-          Get.offAllNamed(AppRoute.expertHomepage);
+          Get.offAllNamed(AppRoute.bottomNavBarexpert);
         } else if (userEmail.contains('admin')) {
           Get.offAllNamed(AppRoute.adminHomepage);
         } else if (userEmail.contains('manager')) {

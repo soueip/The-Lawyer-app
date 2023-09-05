@@ -1,12 +1,9 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:projet/core/constant/routes.dart';
-
 import 'package:projet/view/screen/auth/forget%20password/forgetpass.dart';
 import 'package:projet/view/screen/auth/forget%20password/resetpassword.dart';
 import 'package:projet/view/screen/auth/forget%20password/successpage.dart';
-
 import 'package:projet/view/screen/auth/login.dart';
-
 import 'package:projet/view/screen/auth/forget%20password/verifycode.dart';
 import 'package:projet/view/screen/auth/successsignup.dart';
 import 'package:projet/view/screen/auth/verifsignup.dart';
@@ -14,15 +11,16 @@ import 'package:projet/view/screen/client/blog.dart';
 import 'package:projet/view/screen/client/offre.dart';
 import 'package:projet/view/screen/client/oldtickets.dart';
 import 'package:projet/view/screen/client/profile.dart';
-import 'package:projet/view/screen/expert/experthomepage.dart';
 import 'package:projet/view/screen/client/clienthomepage.dart';
 import 'package:projet/view/screen/admin/adminhomepage.dart';
+import 'package:projet/view/screen/expert/experthomepage.dart';
 import 'package:projet/view/screen/manager/managerhomepage.dart';
 import 'package:projet/view/screen/onboarding.dart';
 import 'package:projet/view/screen/auth/signup.dart';
 import 'package:projet/view/widget/client/bottomnavbarclient/bottom_navbar.dart';
 
 import 'core/middleware/mymiddleware.dart';
+import 'view/widget/expert/bottomnavbarexpert/bottomnavbarexpert.dart';
 
 List<GetPage<dynamic>>? routes = [
   GetPage(
@@ -37,6 +35,16 @@ List<GetPage<dynamic>>? routes = [
       screens: [
         ClientHomepage(),
         const Blog(),
+        const OldTickets(),
+        const Profile(),
+      ],
+    ),
+  ),
+  GetPage(
+    name: AppRoute.bottomNavBarexpert,
+    page: () => BottomNavBarexpert(
+      screens: [
+        ExpertHomepage(),
         const OldTickets(),
         const Profile(),
       ],
@@ -58,7 +66,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.blog, page: () => Offre()),
   GetPage(name: AppRoute.profile, page: () => const Profile()),
 
-  GetPage(name: AppRoute.expertHomepage, page: () => const ExpertHomepage()),
+  //GetPage(name: AppRoute.expertHomepage, page: () => ExpertHomepage()),
 
   GetPage(name: AppRoute.adminHomepage, page: () => const AdminHomepage()),
   GetPage(name: AppRoute.managerHomepage, page: () => const ManagerHomepage()),

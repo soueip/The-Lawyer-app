@@ -45,7 +45,7 @@ class _BottomNavBarState extends State<BottomNavBarclient> {
               _currentIndex = index;
             });
           },
-          items: navBarItems,
+          items: navBarclientItems,
         ),
       ),
       floatingActionButton: AddButton(),

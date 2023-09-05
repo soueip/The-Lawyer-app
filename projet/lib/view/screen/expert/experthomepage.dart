@@ -1,69 +1,100 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:projet/view/widget/expert/homepage/ticketcardexp2.dart';
+import '../../../controller/expert/homepage.dart';
+import '../../../core/constant/imageasset.dart';
 import '../../../data/datasource/static/statick.dart';
+import '../../widget/appbar.dart';
 import '../../widget/client/homepage/blogcard.dart';
-import '../../widget/client/homepage/carousel.dart';
-import '../../widget/client/homepage/offrecard.dart';
 import '../../widget/client/homepage/textcolored.dart';
-import '../../widget/client/homepage/ticketcard.dart';
+
+import '../../widget/expert/homepage/ticketcardexpert1.dart';
 import '../client/blog.dart';
-import '../client/offre.dart';
 import '../client/oldtickets.dart';
 
 class ExpertHomepage extends StatelessWidget {
-  const ExpertHomepage({super.key});
+  final ExpertHomepageController controller =
+      Get.put(ExpertHomepageControllerImp());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBarWidget(
+        titleText: '',
+      ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
           children: [
-            CarouselWidget(carouselItems: carouselItems),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                "Latest Ticket",
-                style: Theme.of(context).textTheme.headline4,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 70,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        "Hello,\nexpert",
+                        style: Theme.of(context).textTheme.headline3,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    InkWell(
+                        onTap: () {
+                          controller.updateCurrentPageIndex(1);
+                          Get.to(const OldTickets());
+                        },
+                        child: TicketCardexpert(
+                          title: "Total Orders",
+                          status: "20 Orders",
+                          icon: FontAwesomeIcons.scaleBalanced,
+                        )),
+                    InkWell(
+                        onTap: () {
+                          controller.updateCurrentPageIndex(1);
+                          Get.to(const OldTickets());
+                        },
+                        child: TicketCardexpert(
+                          title: "Total Orders",
+                          status: "20 Orders",
+                          icon: FontAwesomeIcons.peopleCarryBox,
+                        )),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Coloredtext(
+                  leftText: "Tickets",
+                  rightText: "See All",
+                  rightTextOnTap: () {
+                    Get.to(const Blog());
+                  },
+                ),
+                TicketCard2(
+                  name: allTickets[0]['name'],
+                  statu: allTickets[0]['statu'],
+                  clientname: allTickets[0]['clientname'],
+                  dates: allTickets[0]['dates'],
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
+            Positioned(
+              top: -8, // Adjust this value to control the overlap
+              right: 7, // Adjust this value to control the overlap
+              child: Image.asset(
+                AppImageAsset.experthello,
+                width: 180,
+                height: 180,
               ),
             ),
-            InkWell(
-              onTap: () {
-                Get.to(const OldTickets());
-              },
-              child: const TicketCard(
-                title: "Ticket Title",
-                status: "Open",
-              ),
-            ),
-            const SizedBox(height: 20),
-            Coloredtext(
-              leftText: "Buy New Offer",
-              rightText: "See All",
-              rightTextOnTap: () {
-                Get.to(Offre());
-              },
-            ),
-            Offrecard(
-              nom: offreList[0]['nom'],
-              description: offreList[0]['description'],
-            ),
-            const SizedBox(height: 20),
-            Coloredtext(
-              leftText: "Blogs",
-              rightText: "See All",
-              rightTextOnTap: () {
-                Get.to(Blog());
-              },
-            ),
-            BlogCard(
-              title: bloglist[0].title!,
-              description: bloglist[0].description!,
-              blogimage: bloglist[0].blogimage!,
-            ),
-            const SizedBox(height: 20),
           ],
         ),
       ),

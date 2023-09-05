@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:projet/core/constant/color.dart';
-import 'package:projet/view/widget/appbar.dart';
 import '../../../../data/datasource/static/statick.dart';
-import 'addbutton.dart';
 
-class BottomNavBarclient extends StatefulWidget {
+class BottomNavBarexpert extends StatefulWidget {
   final List<Widget> screens;
 
-  const BottomNavBarclient({Key? key, required this.screens}) : super(key: key);
+  const BottomNavBarexpert({Key? key, required this.screens}) : super(key: key);
 
   @override
-  _BottomNavBarState createState() => _BottomNavBarState();
+  _BottomNavBarexpertState createState() => _BottomNavBarexpertState();
 }
 
-class _BottomNavBarState extends State<BottomNavBarclient> {
+class _BottomNavBarexpertState extends State<BottomNavBarexpert> {
   int _currentIndex = 0;
 
   @override
@@ -36,7 +34,7 @@ class _BottomNavBarState extends State<BottomNavBarclient> {
           ],
         ),
         child: BottomNavigationBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white,
           selectedItemColor: AppColor.bleu,
           unselectedItemColor: Colors.grey,
           currentIndex: _currentIndex,
@@ -45,10 +43,9 @@ class _BottomNavBarState extends State<BottomNavBarclient> {
               _currentIndex = index;
             });
           },
-          items: navBarItems,
+          items: navBarexpertItems,
         ),
       ),
-      floatingActionButton: AddButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

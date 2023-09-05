@@ -10,7 +10,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColor.lightwhite,
+      backgroundColor: Colors.transparent,
       elevation: 0,
       automaticallyImplyLeading: false,
       title: Row(
@@ -31,7 +31,6 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           ),
           const SizedBox(width: 8),
           Expanded(
-            // Allow the text to take up the available space
             child: Center(
               child: Text(
                 titleText,
