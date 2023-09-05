@@ -99,8 +99,8 @@ List<BottomNavigationBarItem> navBarexpertItems = [
     label: 'Home',
   ),
   const BottomNavigationBarItem(
-    icon: Icon(FontAwesomeIcons.ticket),
-    label: 'my tickets',
+    icon: Icon(FontAwesomeIcons.ticketSimple),
+    label: 'tickets',
   ),
   const BottomNavigationBarItem(
     icon: Icon(Icons.person),

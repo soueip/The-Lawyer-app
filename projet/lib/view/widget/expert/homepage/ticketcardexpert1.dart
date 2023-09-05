@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:projet/core/constant/color.dart';
-import 'package:projet/core/constant/imageasset.dart';
 
 class TicketCardexpert extends StatelessWidget {
   TicketCardexpert({

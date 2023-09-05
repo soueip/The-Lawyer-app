@@ -16,13 +16,7 @@ class ExpertHomepageController extends GetxController {
   // Add any other controller logic you might need here
 }
 
-class ExpertHomepageControllerImp extends ExpertHomepageController {
-  @override
-  void onInit() {
-    super.onInit();
-    // Initialize any data or perform actions when the controller is initialized
-  }
-}
+class ExpertHomepageControllerImp extends ExpertHomepageController {}
 
 class OffreCarouselController extends GetxController {
   // Current page index

@@ -27,11 +27,11 @@ class DetailButton extends StatelessWidget {
             textColor: AppColor.bleu,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
-              side: BorderSide(color: AppColor.bleu),
+              side: const BorderSide(color: AppColor.bleu),
             ),
             child: Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 fontFamily: "RedHatDisplay",
                 fontWeight: FontWeight.w600,

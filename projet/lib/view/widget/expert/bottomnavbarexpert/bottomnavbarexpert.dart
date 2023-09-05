@@ -46,7 +46,6 @@ class _BottomNavBarexpertState extends State<BottomNavBarexpert> {
           items: navBarexpertItems,
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

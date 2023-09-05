@@ -42,7 +42,7 @@ class TicketCard2 extends StatelessWidget {
                 Container(
                   width: 50.0,
                   height: 50.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppColor.marron,
                   ),
@@ -99,7 +99,7 @@ class TicketCard2 extends StatelessWidget {
             ),
             Row(
               children: [
-                FaIcon(
+                const FaIcon(
                   FontAwesomeIcons.calendar,
                   color: AppColor.bleu,
                   size: 15,
@@ -107,7 +107,7 @@ class TicketCard2 extends StatelessWidget {
                 const SizedBox(width: 10),
                 Text(
                   DateFormat('EEEE, MMMM d').format(dates),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: AppColor.bleu,
                     fontSize: 12,
                     fontFamily: "RedHatDisplay",
@@ -115,7 +115,7 @@ class TicketCard2 extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                FaIcon(
+                const FaIcon(
                   FontAwesomeIcons.clock,
                   color: AppColor.bleu,
                   size: 15,
@@ -123,7 +123,7 @@ class TicketCard2 extends StatelessWidget {
                 const SizedBox(width: 10),
                 Text(
                   DateFormat('HH:mm').format(dates),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: AppColor.bleu,
                     fontSize: 12,
                     fontFamily: "RedHatDisplay",

@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:projet/view/screen/expert/ticketpage.dart';
 import 'package:projet/view/widget/expert/homepage/ticketcardexp2.dart';
 import '../../../controller/expert/homepage.dart';
 import '../../../core/constant/imageasset.dart';
 import '../../../data/datasource/static/statick.dart';
 import '../../widget/appbar.dart';
-import '../../widget/client/homepage/blogcard.dart';
 import '../../widget/client/homepage/textcolored.dart';
-
 import '../../widget/expert/homepage/ticketcardexpert1.dart';
-import '../client/blog.dart';
 import '../client/oldtickets.dart';
 
 class ExpertHomepage extends StatelessWidget {
@@ -21,7 +19,7 @@ class ExpertHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBarWidget(
+      appBar: const AppBarWidget(
         titleText: '',
       ),
       body: SingleChildScrollView(
@@ -30,7 +28,7 @@ class ExpertHomepage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 70,
                 ),
                 Row(
@@ -74,7 +72,7 @@ class ExpertHomepage extends StatelessWidget {
                   leftText: "Tickets",
                   rightText: "See All",
                   rightTextOnTap: () {
-                    Get.to(const Blog());
+                    Get.to(TicketListPage());
                   },
                 ),
                 TicketCard2(

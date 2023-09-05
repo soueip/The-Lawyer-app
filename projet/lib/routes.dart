@@ -11,6 +11,7 @@ import 'package:projet/view/screen/client/blog.dart';
 import 'package:projet/view/screen/client/offre.dart';
 import 'package:projet/view/screen/client/oldtickets.dart';
 import 'package:projet/view/screen/client/profile.dart';
+import 'package:projet/view/screen/expert/ticketpage.dart';
 import 'package:projet/view/screen/client/clienthomepage.dart';
 import 'package:projet/view/screen/admin/adminhomepage.dart';
 import 'package:projet/view/screen/expert/experthomepage.dart';
@@ -45,7 +46,7 @@ List<GetPage<dynamic>>? routes = [
     page: () => BottomNavBarexpert(
       screens: [
         ExpertHomepage(),
-        const OldTickets(),
+        TicketListPage(),
         const Profile(),
       ],
     ),
