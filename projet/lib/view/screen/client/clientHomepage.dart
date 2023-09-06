@@ -20,7 +20,7 @@ class ClientHomepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(
+      appBar: const AppBarWidget(
         titleText: '',
       ),
       body: SingleChildScrollView(
@@ -62,7 +62,7 @@ class ClientHomepage extends StatelessWidget {
               leftText: "Blogs",
               rightText: "See All",
               rightTextOnTap: () {
-                Get.to(Blog());
+                Get.to(const Blog());
               },
             ),
             BlogCard(

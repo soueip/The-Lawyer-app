@@ -23,7 +23,7 @@ class _OldTicketsState extends State<OldTickets> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(
+      appBar: const AppBarWidget(
         titleText: 'Your Tickets',
       ),
       body: ListView.builder(

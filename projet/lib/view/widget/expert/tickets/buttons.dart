@@ -17,10 +17,10 @@ Widget buildButton(
       },
       color: buttonColor,
       textColor: isSelected ? AppColor.bleu : AppColor.bleu,
-      child: Text(label),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
+      child: Text(label),
     ),
   );
 }
