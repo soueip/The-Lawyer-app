@@ -18,7 +18,7 @@ List<Map<String, dynamic>> allTickets = [
   {
     'name': 'arth',
     'statu': 'effectue',
-    'clientname': 'ahmed mohamed',
+    'clientname': 'slim chriff',
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
@@ -26,7 +26,7 @@ List<Map<String, dynamic>> allTickets = [
   {
     'name': 'arth',
     'statu': 'valide',
-    'clientname': 'ahmed mohamed',
+    'clientname': 'aymen hayder',
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
@@ -34,7 +34,7 @@ List<Map<String, dynamic>> allTickets = [
   {
     'name': 'arth',
     'statu': 'clôturer',
-    'clientname': 'ahmed mohamed',
+    'clientname': 'asma salem',
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',

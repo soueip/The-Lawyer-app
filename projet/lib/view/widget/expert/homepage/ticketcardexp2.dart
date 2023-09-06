@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:projet/core/constant/color.dart';
+import 'package:projet/view/screen/expert/detailspage.dart';
 import 'package:projet/view/widget/expert/homepage/status.dart';
 import 'detailbutton.dart';
 
@@ -12,12 +13,14 @@ class TicketCard2 extends StatelessWidget {
     required this.statu,
     required this.dates,
     required this.clientname,
+    required this.question,
   }) : super(key: key);
 
   final String name;
   final String statu;
   final DateTime dates;
   final String clientname;
+  final String question;
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +139,18 @@ class TicketCard2 extends StatelessWidget {
             DetailButton(
               text: "Details",
               onPressed: () {
-                // Handle onPressed logic here
+                // Navigate to DetailTicketPage and pass data.
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => DetailTicketPage(
+                      ticketName: name,
+                      clientName: clientname,
+                      ticketStatus: statu,
+                      ticketDate: dates,
+                      question: question,
+                    ),
+                  ),
+                );
               },
             ),
           ],

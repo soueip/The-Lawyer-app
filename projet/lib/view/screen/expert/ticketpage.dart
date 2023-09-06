@@ -28,11 +28,11 @@ class _TicketListPageState extends State<TicketListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(titleText: 'tickets'),
+      appBar: const AppBarWidget(titleText: 'tickets'),
       body: Column(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppColor.gris,
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
@@ -71,6 +71,7 @@ class _TicketListPageState extends State<TicketListPage> {
                   statu: ticket['statu'] as String,
                   dates: ticket['dates'] as DateTime,
                   clientname: ticket['clientname'] as String,
+                  question: ticket['question'] as String,
                 );
               },
             ),

@@ -56,7 +56,7 @@ class TicketCardexpert extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Color.fromARGB(255, 140, 146, 147),
                         fontSize: 12,
                         fontWeight: FontWeight.w600),

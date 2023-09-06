@@ -23,7 +23,6 @@ class StatusWidget extends StatelessWidget {
 
     return Row(
       children: [
-        Text("Statu : "),
         Container(
           padding: const EdgeInsets.symmetric(
             horizontal: 8.0,

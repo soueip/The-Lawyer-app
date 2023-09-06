@@ -80,6 +80,7 @@ class ExpertHomepage extends StatelessWidget {
                   statu: allTickets[0]['statu'],
                   clientname: allTickets[0]['clientname'],
                   dates: allTickets[0]['dates'],
+                  question: allTickets[0]['question'],
                 ),
                 const SizedBox(height: 20),
               ],

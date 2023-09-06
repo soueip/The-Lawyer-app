@@ -7,7 +7,7 @@ Widget buildButton(
   final buttonColor = isSelected ? AppColor.lightwhite : AppColor.gris;
 
   return Container(
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
       color: AppColor.gris,
       borderRadius: BorderRadius.all(Radius.circular(30)),
     ),
