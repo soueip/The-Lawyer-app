@@ -185,11 +185,12 @@ class DetailTicketPage extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              child: const Align(
+              child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Your Text Here",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  question,
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.w500),
                 ),
               ),
             )

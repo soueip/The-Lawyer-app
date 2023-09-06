@@ -40,21 +40,18 @@ class LoginControllerImp extends LoginController {
       try {
         await Future.delayed(const Duration(seconds: 1));
 
-        // Extracting the email entered by the user
-        String userEmail = email.text.toLowerCase(); // Convert to lowercase
+        String userEmail = email.text.toLowerCase();
 
-        // Check for specific keywords in the email and navigate accordingly
         if (userEmail.contains('expert')) {
           Get.offAllNamed(AppRoute.bottomNavBarexpert);
         } else if (userEmail.contains('admin')) {
           Get.offAllNamed(AppRoute.adminHomepage);
         } else if (userEmail.contains('manager')) {
-          Get.offAllNamed(AppRoute.managerHomepage);
+          Get.offAllNamed(AppRoute.bottomNavBarmanager);
         } else {
           Get.offAllNamed(AppRoute.bottomnavbar);
         }
       } catch (e) {
-        // Show an error message to the user
         Get.snackbar(
           snackPosition: SnackPosition.BOTTOM,
           'Error',

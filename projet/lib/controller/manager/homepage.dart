@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class ExpertHomepageController extends GetxController {
+class ManagerHomepageController extends GetxController {
   // Current page index
   RxInt currentPageIndex = 0.obs;
 
@@ -13,7 +13,7 @@ class ExpertHomepageController extends GetxController {
   }
 }
 
-class ExpertHomepageControllerImp extends ExpertHomepageController {}
+class ManagerHomepageControllerImp extends ManagerHomepageController {}
 
 class OffreCarouselController extends GetxController {
   RxInt currentPageIndex = 0.obs;

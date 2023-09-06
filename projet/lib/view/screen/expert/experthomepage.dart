@@ -86,8 +86,8 @@ class ExpertHomepage extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: -8, // Adjust this value to control the overlap
-              right: 7, // Adjust this value to control the overlap
+              top: -8,
+              right: 7,
               child: Image.asset(
                 AppImageAsset.experthello,
                 width: 180,

@@ -20,5 +20,6 @@ class AppRoute {
   static const String bottomNavBarexpert = "/bottomnavbarexpert";
 
   static const String managerHomepage = "/managerHomepage";
+  static const String bottomNavBarmanager = "/bottomnavbarmanager";
   static const String adminHomepage = "/adminHomepage";
 }

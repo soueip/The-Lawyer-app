@@ -15,10 +15,12 @@ import 'package:projet/view/screen/expert/ticketpage.dart';
 import 'package:projet/view/screen/client/clienthomepage.dart';
 import 'package:projet/view/screen/admin/adminhomepage.dart';
 import 'package:projet/view/screen/expert/experthomepage.dart';
+
 import 'package:projet/view/screen/manager/managerhomepage.dart';
 import 'package:projet/view/screen/onboarding.dart';
 import 'package:projet/view/screen/auth/signup.dart';
 import 'package:projet/view/widget/client/bottomnavbarclient/bottom_navbar.dart';
+import 'package:projet/view/widget/manager/bottomnavbarmanager/bottomnavbarmanager.dart';
 
 import 'core/middleware/mymiddleware.dart';
 import 'view/widget/expert/bottomnavbarexpert/bottomnavbarexpert.dart';
@@ -41,6 +43,7 @@ List<GetPage<dynamic>>? routes = [
       ],
     ),
   ),
+
   GetPage(
     name: AppRoute.bottomNavBarexpert,
     page: () => BottomNavBarexpert(
@@ -48,6 +51,16 @@ List<GetPage<dynamic>>? routes = [
         ExpertHomepage(),
         TicketListPage(),
         const Profile(),
+      ],
+    ),
+  ),
+  GetPage(
+    name: AppRoute.bottomNavBarmanager,
+    page: () => const BottomNavBarmanager(
+      screens: [
+        ManagerHomepage(),
+        OldTickets(),
+        Profile(),
       ],
     ),
   ),
