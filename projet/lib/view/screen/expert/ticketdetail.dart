@@ -6,7 +6,8 @@ class TicketDetails extends StatelessWidget {
   final DateTime ticketDate;
   final String ticketClientName;
 
-  TicketDetails({
+  const TicketDetails({
+    super.key,
     required this.ticketName,
     required this.ticketStatus,
     required this.ticketDate,
@@ -17,7 +18,7 @@ class TicketDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ticket Details'),
+        title: const Text('Ticket Details'),
       ),
       body: Center(
         child: Column(

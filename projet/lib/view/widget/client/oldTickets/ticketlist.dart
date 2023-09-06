@@ -6,7 +6,7 @@ import '../../../../data/model/tickets.dart';
 class TicketTile extends StatelessWidget {
   final Ticket ticket;
 
-  TicketTile(this.ticket);
+  const TicketTile(this.ticket, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class TicketTile extends StatelessWidget {
         children: [
           const SizedBox(height: 6),
           Text(
-            'Status  ' + ticket.statu,
+            'Status  ${ticket.statu}',
             style: TextStyle(fontSize: 14, color: Colors.grey[600]),
           ),
           const SizedBox(height: 4),

@@ -177,15 +177,15 @@ class DetailTicketPage extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Color.fromARGB(255, 195, 237, 252),
+                  color: const Color.fromARGB(255, 195, 237, 252),
                   width: 1.0,
                 ),
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              child: Align(
+              child: const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Your Text Here",
