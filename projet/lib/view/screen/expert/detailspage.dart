@@ -47,6 +47,7 @@ class DetailTicketPage extends StatelessWidget {
             const SizedBox(height: 15),
             Text(
               ticketName,
+              // ignore: deprecated_member_use
               style: Theme.of(context).textTheme.headline4,
             ),
             const SizedBox(height: 10),
@@ -161,6 +162,7 @@ class DetailTicketPage extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 "Files Uploaded",
+                // ignore: deprecated_member_use
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),
@@ -173,6 +175,7 @@ class DetailTicketPage extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 "Description",
+                // ignore: deprecated_member_use
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),

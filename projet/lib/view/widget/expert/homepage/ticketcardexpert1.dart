@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:projet/core/constant/color.dart';
 
 class TicketCardexpert extends StatelessWidget {
-  TicketCardexpert({
+  const TicketCardexpert({
     Key? key,
     required this.title,
     required this.status,
@@ -63,7 +63,7 @@ class TicketCardexpert extends StatelessWidget {
                   ),
                   const SizedBox(height: 4.0),
                   Text(
-                    "$status",
+                    status,
                     style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,

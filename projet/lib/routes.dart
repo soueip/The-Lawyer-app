@@ -51,7 +51,7 @@ List<GetPage<dynamic>>? routes = [
     page: () => BottomNavBarexpert(
       screens: [
         ExpertHomepage(),
-        TicketListPageexpert(),
+        const TicketListPageexpert(),
         const Profile(),
       ],
     ),

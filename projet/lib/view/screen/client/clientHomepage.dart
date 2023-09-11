@@ -50,7 +50,7 @@ class ClientHomepage extends StatelessWidget {
               leftText: "Buy New Offer",
               rightText: "See All",
               rightTextOnTap: () {
-                Get.to(Offre());
+                Get.to(const Offre());
               },
             ),
             Offrecard(

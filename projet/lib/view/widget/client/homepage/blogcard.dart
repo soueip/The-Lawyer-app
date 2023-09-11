@@ -51,7 +51,7 @@ class BlogCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4.0),
                 Text(
-                  "$description",
+                  description,
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,

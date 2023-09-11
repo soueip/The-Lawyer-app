@@ -50,7 +50,7 @@ class ExpertHomepage extends StatelessWidget {
                     InkWell(
                         onTap: () {
                           controller.updateCurrentPageIndex(1);
-                          Get.to(TicketListPageexpert());
+                          Get.to(const TicketListPageexpert());
                         },
                         child: TicketCardexpert(
                           title: "Total Tickets",
@@ -60,7 +60,7 @@ class ExpertHomepage extends StatelessWidget {
                     InkWell(
                         onTap: () {
                           controller.updateCurrentPageIndex(1);
-                          Get.to(TicketListPageexpert());
+                          Get.to(const TicketListPageexpert());
                         },
                         child: TicketCardexpert(
                           title: "Total unaffacted",
@@ -74,7 +74,7 @@ class ExpertHomepage extends StatelessWidget {
                   leftText: "Tickets",
                   rightText: "See All",
                   rightTextOnTap: () {
-                    Get.to(TicketListPageexpert());
+                    Get.to(const TicketListPageexpert());
                   },
                 ),
                 SizedBox(
