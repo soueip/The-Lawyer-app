@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:projet/view/screen/expert/ticketpage.dart';
+import 'package:projet/view/screen/expert/ticketpagexpert.dart';
 import 'package:projet/view/widget/expert/homepage/ticketcardexp2.dart';
 import '../../../controller/expert/homepage.dart';
 import '../../../core/constant/imageasset.dart';
+import '../../../core/functions/unaffectedtickets.dart';
 import '../../../data/datasource/static/statick.dart';
 import '../../widget/appbar.dart';
 import '../../widget/client/homepage/textcolored.dart';
@@ -14,6 +15,8 @@ import '../client/oldtickets.dart';
 class ExpertHomepage extends StatelessWidget {
   final ExpertHomepageController controller =
       Get.put(ExpertHomepageControllerImp());
+  int totalTickets = allTickets.length;
+  List<Map<String, dynamic>> effectue = filterTicketsByStatus('effectue');
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +54,8 @@ class ExpertHomepage extends StatelessWidget {
                           Get.to(const OldTickets());
                         },
                         child: TicketCardexpert(
-                          title: "Total Orders",
-                          status: "20 Orders",
+                          title: "Total Tickets",
+                          status: "$totalTickets Ticket",
                           icon: FontAwesomeIcons.scaleBalanced,
                         )),
                     InkWell(
@@ -61,8 +64,8 @@ class ExpertHomepage extends StatelessWidget {
                           Get.to(const OldTickets());
                         },
                         child: TicketCardexpert(
-                          title: "Total Orders",
-                          status: "20 Orders",
+                          title: "Total unaffacted",
+                          status: "${effectue.length} Ticket",
                           icon: FontAwesomeIcons.peopleCarryBox,
                         )),
                   ],
@@ -72,15 +75,26 @@ class ExpertHomepage extends StatelessWidget {
                   leftText: "Tickets",
                   rightText: "See All",
                   rightTextOnTap: () {
-                    Get.to(TicketListPage());
+                    Get.to(TicketListPageexpert());
                   },
                 ),
-                TicketCard2(
-                  name: allTickets[0]['name'],
-                  statu: allTickets[0]['statu'],
-                  clientname: allTickets[0]['clientname'],
-                  dates: allTickets[0]['dates'],
-                  question: allTickets[0]['question'],
+                SizedBox(
+                  height: 300,
+                  child: ListView.builder(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    itemCount: effectue.length,
+                    itemBuilder: (context, index) {
+                      final ticket = effectue[index];
+                      return TicketCard2(
+                        name: ticket['name'],
+                        statu: ticket['statu'],
+                        clientname: ticket['clientname'],
+                        dates: ticket['dates'],
+                        question: ticket['question'],
+                      );
+                    },
+                  ),
                 ),
                 const SizedBox(height: 20),
               ],

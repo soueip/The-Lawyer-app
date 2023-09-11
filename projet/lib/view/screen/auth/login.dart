@@ -87,7 +87,7 @@ class Login extends StatelessWidget {
                   text1: "18".tr,
                   text2: "19".tr,
                   onTap: () {
-                    controller.goToSignUp();
+                    controller.signup();
                   },
                 ),
               ],

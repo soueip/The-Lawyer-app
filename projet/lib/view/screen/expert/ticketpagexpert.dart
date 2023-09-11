@@ -6,23 +6,23 @@ import '../../../core/functions/recherche.dart';
 import '../../widget/expert/homepage/ticketcardexp2.dart';
 import '../../widget/expert/tickets/buttons.dart';
 
-class TicketListPage extends StatefulWidget {
+class TicketListPageexpert extends StatefulWidget {
   @override
-  _TicketListPageState createState() => _TicketListPageState();
+  _TicketListPageexpertState createState() => _TicketListPageexpertState();
 }
 
-class _TicketListPageState extends State<TicketListPage> {
+class _TicketListPageexpertState extends State<TicketListPageexpert> {
   int selectedButtonIndex = 0;
   List<Map<String, dynamic>> _filteredTickets = [];
 
   @override
   void initState() {
     super.initState();
-    _filterTickets();
+    _filterTicketsexpert();
   }
 
-  void _filterTickets() {
-    _filteredTickets = filterTickets(selectedButtonIndex);
+  void _filterTicketsexpert() {
+    _filteredTickets = filterTicketsexpert(selectedButtonIndex);
   }
 
   @override
@@ -43,19 +43,19 @@ class _TicketListPageState extends State<TicketListPage> {
                 buildButton(selectedButtonIndex, 0, 'All', (index) {
                   setState(() {
                     selectedButtonIndex = index;
-                    _filterTickets();
+                    _filterTicketsexpert();
                   });
                 }),
                 buildButton(selectedButtonIndex, 1, 'Completed', (index) {
                   setState(() {
                     selectedButtonIndex = index;
-                    _filterTickets();
+                    _filterTicketsexpert();
                   });
                 }),
                 buildButton(selectedButtonIndex, 2, 'Not Completed', (index) {
                   setState(() {
                     selectedButtonIndex = index;
-                    _filterTickets();
+                    _filterTicketsexpert();
                   });
                 }),
               ],

@@ -17,7 +17,6 @@ class DetailButton extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 20),
       child: Center(
-        // Center the button within its parent container
         child: SizedBox(
           width: buttonWidth,
           child: MaterialButton(

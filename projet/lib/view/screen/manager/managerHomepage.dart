@@ -4,18 +4,25 @@ import 'package:get/get.dart';
 import 'package:projet/controller/manager/homepage.dart';
 import 'package:projet/data/datasource/static/statick.dart';
 import 'package:projet/view/screen/client/oldtickets.dart';
-import 'package:projet/view/screen/expert/ticketpage.dart';
+import 'package:projet/view/screen/manager/ticketpagemanager.dart';
+
 import 'package:projet/view/widget/appbar.dart';
 import 'package:projet/view/widget/client/homepage/textcolored.dart';
 import 'package:projet/view/widget/expert/homepage/ticketcardexp2.dart';
 import 'package:projet/view/widget/expert/homepage/ticketcardexpert1.dart';
 
 import '../../../core/constant/imageasset.dart';
+import '../../../core/functions/unaffectedtickets.dart';
 
 class ManagerHomepage extends StatelessWidget {
   ManagerHomepage({Key? key}) : super(key: key);
   final ManagerHomepageController controller =
       Get.put(ManagerHomepageControllerImp());
+  int totalTickets = allTickets.length;
+
+  List<Map<String, dynamic>> nonAffecteTickets =
+      filterTicketsByStatus('non affecte');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,10 +30,19 @@ class ManagerHomepage extends StatelessWidget {
       appBar: const AppBarWidget(
         titleText: '',
       ),
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Column(
+      body: Stack(
+        children: [
+          Positioned(
+            top: -8,
+            right: 7,
+            child: Image.asset(
+              AppImageAsset.experthello,
+              width: 180,
+              height: 180,
+            ),
+          ),
+          SingleChildScrollView(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
@@ -38,7 +54,7 @@ class ManagerHomepage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
-                        "Hello,\nexpert",
+                        "Hello,\nManager",
                         style: Theme.of(context).textTheme.headline3,
                       ),
                     ),
@@ -52,8 +68,8 @@ class ManagerHomepage extends StatelessWidget {
                           Get.to(const OldTickets());
                         },
                         child: TicketCardexpert(
-                          title: "Total Orders",
-                          status: "20 Orders",
+                          title: "Total Tickets",
+                          status: "$totalTickets Ticket",
                           icon: FontAwesomeIcons.scaleBalanced,
                         )),
                     InkWell(
@@ -62,41 +78,42 @@ class ManagerHomepage extends StatelessWidget {
                           Get.to(const OldTickets());
                         },
                         child: TicketCardexpert(
-                          title: "Total Orders",
-                          status: "20 Orders",
+                          title: "Total unaffacted",
+                          status: "${nonAffecteTickets.length} Ticket",
                           icon: FontAwesomeIcons.peopleCarryBox,
                         )),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 Coloredtext(
-                  leftText: "Tickets",
+                  leftText: "Ticket non affecte",
                   rightText: "See All",
                   rightTextOnTap: () {
-                    Get.to(TicketListPage());
+                    Get.to(TicketListPagemanager());
                   },
                 ),
-                TicketCard2(
-                  name: allTickets[0]['name'],
-                  statu: allTickets[0]['statu'],
-                  clientname: allTickets[0]['clientname'],
-                  dates: allTickets[0]['dates'],
-                  question: allTickets[0]['question'],
+                SizedBox(
+                  height: 300,
+                  child: ListView.builder(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    itemCount: nonAffecteTickets.length,
+                    itemBuilder: (context, index) {
+                      final ticket = nonAffecteTickets[index];
+                      return TicketCard2(
+                        name: ticket['name'],
+                        statu: ticket['statu'],
+                        clientname: ticket['clientname'],
+                        dates: ticket['dates'],
+                        question: ticket['question'],
+                      );
+                    },
+                  ),
                 ),
-                const SizedBox(height: 20),
               ],
             ),
-            Positioned(
-              top: -8,
-              right: 7,
-              child: Image.asset(
-                AppImageAsset.experthello,
-                width: 180,
-                height: 180,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

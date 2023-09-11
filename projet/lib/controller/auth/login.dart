@@ -4,7 +4,7 @@ import 'package:projet/core/constant/routes.dart';
 
 abstract class LoginController extends GetxController {
   void login();
-  void goToSignUp();
+  void signup();
   void goToForgetPassword();
 }
 
@@ -64,7 +64,7 @@ class LoginControllerImp extends LoginController {
   }
 
   @override
-  void goToSignUp() {
+  void signup() {
     Get.offNamed(AppRoute.signUp);
   }
 

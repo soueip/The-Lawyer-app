@@ -25,6 +25,14 @@ List<Map<String, dynamic>> allTickets = [
   },
   {
     'name': 'arth',
+    'statu': 'effectue',
+    'clientname': 'hama hama',
+    'assignedto': 'Mohamed bganda',
+    'dates': DateTime(2023, 8, 27),
+    'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
+  },
+  {
+    'name': 'arth',
     'statu': 'valide',
     'clientname': 'aymen hayder',
     'assignedto': 'Mohamed bganda',
