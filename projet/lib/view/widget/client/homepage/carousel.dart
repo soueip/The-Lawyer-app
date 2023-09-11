@@ -8,7 +8,7 @@ class CarouselWidget extends StatelessWidget {
   final List<Map<String, dynamic>> carouselItems;
   final ClientHomepageController controller = Get.find();
 
-  CarouselWidget({required this.carouselItems});
+  CarouselWidget({super.key, required this.carouselItems});
 
   @override
   Widget build(BuildContext context) {

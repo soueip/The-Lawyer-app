@@ -62,7 +62,7 @@ List<GetPage<dynamic>>? routes = [
       screens: [
         ManagerHomepage(),
         TicketListPagemanager(),
-        Profile(),
+        const Profile(),
       ],
     ),
   ),
@@ -79,7 +79,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.clientHomepage, page: () => ClientHomepage()),
   GetPage(name: AppRoute.oldticket, page: () => const OldTickets()),
   GetPage(name: AppRoute.blog, page: () => const Blog()),
-  GetPage(name: AppRoute.blog, page: () => Offre()),
+  GetPage(name: AppRoute.blog, page: () => const Offre()),
   GetPage(name: AppRoute.profile, page: () => const Profile()),
 
   //GetPage(name: AppRoute.expertHomepage, page: () => ExpertHomepage()),

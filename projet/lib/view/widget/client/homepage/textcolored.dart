@@ -7,6 +7,7 @@ class Coloredtext extends StatelessWidget {
   final VoidCallback? rightTextOnTap;
 
   const Coloredtext({
+    super.key,
     required this.leftText,
     required this.rightText,
     this.rightTextOnTap,
