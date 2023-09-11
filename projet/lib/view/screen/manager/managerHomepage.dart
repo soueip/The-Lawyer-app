@@ -62,16 +62,11 @@ class ManagerHomepage extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    InkWell(
-                        onTap: () {
-                          controller.updateCurrentPageIndex(1);
-                          Get.to(const OldTickets());
-                        },
-                        child: TicketCardexpert(
-                          title: "Total Tickets",
-                          status: "$totalTickets Ticket",
-                          icon: FontAwesomeIcons.scaleBalanced,
-                        )),
+                    TicketCardexpert(
+                      title: "Total Tickets",
+                      status: "$totalTickets Ticket",
+                      icon: FontAwesomeIcons.scaleBalanced,
+                    ),
                     InkWell(
                         onTap: () {
                           controller.updateCurrentPageIndex(1);

@@ -22,7 +22,7 @@ class _TicketListPagemanagerState extends State<TicketListPagemanager> {
   }
 
   void _filterTickets() {
-    _filteredTickets = filterTickets(selectedButtonIndex);
+    _filteredTickets = filterTicketsmanager(selectedButtonIndex);
   }
 
   @override

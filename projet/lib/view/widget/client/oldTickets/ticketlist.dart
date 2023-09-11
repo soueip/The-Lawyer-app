@@ -43,12 +43,6 @@ class TicketTile extends StatelessWidget {
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 6),
-          Text(
-            'Status  ${ticket.statu}',
-            style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-          ),
-          const SizedBox(height: 4),
           Text(
             ticket.question,
             style: const TextStyle(fontSize: 14, color: Colors.grey),
@@ -61,31 +55,31 @@ class TicketTile extends StatelessWidget {
 
   Color _getContainerColor(String statu) {
     switch (statu) {
-      case "non affecte":
+      /*      case "non affecte":
         return AppColor.redy;
       case "effectue":
         return AppColor.redy;
       case "valide":
         return AppColor.redy;
       case "clôturer":
-        return Colors.green.shade50;
+        return Colors.green.shade50; */
       default:
-        return Colors.grey;
+        return AppColor.goldy;
     }
   }
 
   Color _getIconColor(String statu) {
     switch (statu) {
-      case "non affecte":
-        return AppColor.red;
+/*       case "non affecte":
+        return AppColor.gold;
       case "effectue":
-        return AppColor.red;
+        return AppColor.gold;
       case "valide":
-        return AppColor.red;
+        return AppColor.gold;
       case "clôturer":
-        return Colors.green;
+        return AppColor.gold; */
       default:
-        return Colors.grey;
+        return AppColor.gold;
     }
   }
 }

@@ -37,7 +37,7 @@ List<Map<String, dynamic>> allTickets = [
     'clientname': 'aymen hayder',
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
-    'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
+    'question': 'kifch n3ml mliar',
   },
   {
     'name': 'arth',

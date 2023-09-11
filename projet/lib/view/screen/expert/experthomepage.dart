@@ -10,7 +10,6 @@ import '../../../data/datasource/static/statick.dart';
 import '../../widget/appbar.dart';
 import '../../widget/client/homepage/textcolored.dart';
 import '../../widget/expert/homepage/ticketcardexpert1.dart';
-import '../client/oldtickets.dart';
 
 class ExpertHomepage extends StatelessWidget {
   final ExpertHomepageController controller =
@@ -51,7 +50,7 @@ class ExpertHomepage extends StatelessWidget {
                     InkWell(
                         onTap: () {
                           controller.updateCurrentPageIndex(1);
-                          Get.to(const OldTickets());
+                          Get.to(TicketListPageexpert());
                         },
                         child: TicketCardexpert(
                           title: "Total Tickets",
@@ -61,7 +60,7 @@ class ExpertHomepage extends StatelessWidget {
                     InkWell(
                         onTap: () {
                           controller.updateCurrentPageIndex(1);
-                          Get.to(const OldTickets());
+                          Get.to(TicketListPageexpert());
                         },
                         child: TicketCardexpert(
                           title: "Total unaffacted",
