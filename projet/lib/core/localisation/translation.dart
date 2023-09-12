@@ -66,7 +66,7 @@ class MyTranslation extends Translations {
           "12": "Email",
           "13": "Entrer votre Email",
           "14": "Mot de pass",
-          "15": "Entrer votre mot de oass",
+          "15": "Entrer votre mot de passe",
           "16": "Mot de passe oublié ? ",
           "17": "Se connecter",
           "18": "Vous n'avez pas de compte",
