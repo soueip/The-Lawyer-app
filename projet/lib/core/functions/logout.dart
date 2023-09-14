@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:projet/core/constant/color.dart';
 
+import '../../view/screen/auth/login.dart';
+
 Future<bool> alertLogoutApp() async {
   final result = await Get.defaultDialog(
     title: "Alerte",
@@ -21,7 +23,7 @@ Future<bool> alertLogoutApp() async {
               MaterialStateProperty.all(AppColor.red), // Text color
         ),
         onPressed: () {
-          exit(0);
+          Get.offAll(() => Login());
         },
         child: const Text("Se déconnecter"),
       ),
