@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:projet/core/functions/logout.dart';
-import 'package:projet/view/screen/auth/login.dart';
 import 'package:projet/view/widget/appbar.dart';
 
 class Profile extends StatelessWidget {

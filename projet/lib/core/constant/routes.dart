@@ -15,6 +15,7 @@ class AppRoute {
   static const String oldticket = "/oldticket";
   static const String blog = "/blog";
   static const String profile = "/profile";
+  static const String newticket = "/newtickets";
 //expert
   static const String expertHomepage = "/expertHomepage";
   static const String bottomNavBarexpert = "/bottomnavbarexpert";

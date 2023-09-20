@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:projet/core/constant/color.dart';
@@ -23,7 +21,7 @@ Future<bool> alertLogoutApp() async {
               MaterialStateProperty.all(AppColor.red), // Text color
         ),
         onPressed: () {
-          Get.offAll(() => Login());
+          Get.offAll(() => const Login());
         },
         child: const Text("Se déconnecter"),
       ),

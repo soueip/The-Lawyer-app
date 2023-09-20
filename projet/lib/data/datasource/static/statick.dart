@@ -14,6 +14,8 @@ List<Map<String, dynamic>> allTickets = [
     'assignedto': 'chakib lazghab',
     'dates': DateTime(2023, 8, 27),
     'question': 'kifch njem nchki b3bed sra9ni',
+    'files': 'kifch njem nchki b3bed sra9ni',
+    'peroirte': 'kifch njem nchki b3bed sra9ni',
   },
   {
     'name': 'arth',
@@ -22,6 +24,8 @@ List<Map<String, dynamic>> allTickets = [
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
+    'files': 'kifch njem nchki b3bed sra9ni',
+    'peroirte': 'kifch njem nchki b3bed sra9ni',
   },
   {
     'name': 'arth',
@@ -30,6 +34,8 @@ List<Map<String, dynamic>> allTickets = [
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
+    'files': 'kifch njem nchki b3bed sra9ni',
+    'peroirte': 'kifch njem nchki b3bed sra9ni',
   },
   {
     'name': 'arth',
@@ -38,6 +44,8 @@ List<Map<String, dynamic>> allTickets = [
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'kifch n3ml mliar',
+    'files': 'kifch njem nchki b3bed sra9ni',
+    'peroirte': 'kifch njem nchki b3bed sra9ni',
   },
   {
     'name': 'arth',
@@ -46,6 +54,8 @@ List<Map<String, dynamic>> allTickets = [
     'assignedto': 'Mohamed bganda',
     'dates': DateTime(2023, 8, 27),
     'question': 'chnouma loura9 ali n3mlhom bch nkhed titre belu',
+    'files': 'kifch njem nchki b3bed sra9ni',
+    'peroirte': 'kifch njem nchki b3bed sra9ni',
   },
 ];
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../core/constant/color.dart';
 import '../../../screen/client/newtickets.dart';
@@ -12,11 +13,8 @@ class AddButton extends StatelessWidget {
       left: buttonXPosition,
       child: GestureDetector(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const NewTickets(),
-            ),
+          Get.to(
+            () => NewTickets(),
           );
         },
         child: Container(
