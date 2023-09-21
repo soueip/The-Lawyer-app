@@ -29,7 +29,7 @@ class ticketcarduser extends StatelessWidget {
     } else if (statu == 'valide') {
       iconColor = Colors.red; // Set icon color to red for 'valide' status
     } else {
-      iconColor = Colors.black; // Set a default color for other statuses
+      iconColor = Colors.red; // Set a default color for other statuses
     }
 
     return GestureDetector(

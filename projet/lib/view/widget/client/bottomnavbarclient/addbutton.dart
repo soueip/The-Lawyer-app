@@ -11,6 +11,7 @@ class AddButton extends StatelessWidget {
 
     return Positioned(
       left: buttonXPosition,
+      bottom: 40,
       child: GestureDetector(
         onTap: () {
           Get.to(

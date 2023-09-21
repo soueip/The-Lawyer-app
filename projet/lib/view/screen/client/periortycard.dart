@@ -12,11 +12,11 @@ Widget buildPriorityCard({
   Color circleColor;
 
   if (priority == "High") {
-    iconData = FontAwesomeIcons.arrowUp;
+    iconData = FontAwesomeIcons.triangleExclamation;
   } else if (priority == "Medium") {
-    iconData = FontAwesomeIcons.arrowRight;
+    iconData = FontAwesomeIcons.fire;
   } else {
-    iconData = FontAwesomeIcons.arrowDown;
+    iconData = FontAwesomeIcons.exclamation;
   }
 
   iconColor = selectedPriority == priority ? AppColor.gold : AppColor.marron;
@@ -35,17 +35,19 @@ Widget buildPriorityCard({
       ),
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(10.0),
         child: Center(
           widthFactor: 2,
           child: Column(
             children: [
               Container(
+                width: 40,
+                height: 40,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: circleColor,
                 ),
-                padding: EdgeInsets.all(12.0),
+                alignment: Alignment.center,
                 child: FaIcon(
                   iconData,
                   size: 24,

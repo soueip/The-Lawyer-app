@@ -47,7 +47,12 @@ class _BottomNavBarState extends State<BottomNavBarclient> {
           items: navBarclientItems,
         ),
       ),
-      floatingActionButton: AddButton(),
+      floatingActionButton: Stack(
+        children: [
+          // Other widgets in the stack
+          AddButton(), // Your custom button
+        ],
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

@@ -27,12 +27,16 @@ List<Map<String, dynamic>> filterTicketsmanager(int selectedButtonIndex) {
 
   if (selectedButtonIndex == 1) {
     // Filter tickets with status "clôturer"
-    filteredTickets =
-        allTickets.where((ticket) => ticket['statu'] != 'non affecte').toList();
+    filteredTickets = allTickets
+        .where((ticket) =>
+            ticket['statu'] != 'non affecte' && ticket['statu'] != 'en cours')
+        .toList();
   } else if (selectedButtonIndex == 2) {
     // Filter tickets with status different than "clôturer"
-    filteredTickets =
-        allTickets.where((ticket) => ticket['statu'] == 'non affecte').toList();
+    filteredTickets = allTickets
+        .where((ticket) =>
+            ticket['statu'] == 'non affecte' || ticket['statu'] == 'en cours')
+        .toList();
   } else {
     // Show all tickets for other indices
     filteredTickets = List.from(allTickets);
@@ -46,8 +50,10 @@ List<Map<String, dynamic>> filterTicketsuser(int selectedButtonIndex) {
 
   if (selectedButtonIndex == 1) {
     // Filter tickets with status "clôturer"
-    filteredTickets =
-        allTickets.where((ticket) => ticket['statu'] == 'valide').toList();
+    filteredTickets = allTickets
+        .where((ticket) =>
+            ticket['statu'] == 'valide' && ticket['statu'] == 'en cours')
+        .toList();
   } else if (selectedButtonIndex == 2) {
     // Filter tickets with status different than "clôturer"
     filteredTickets =
@@ -55,7 +61,9 @@ List<Map<String, dynamic>> filterTicketsuser(int selectedButtonIndex) {
   } else {
     filteredTickets = allTickets
         .where((ticket) =>
-            ticket['statu'] == 'clôturer' || ticket['statu'] == 'valide')
+            ticket['statu'] == 'clôturer' ||
+            ticket['statu'] == 'valide' ||
+            ticket['statu'] == 'en cours')
         .toList();
   }
 

@@ -45,7 +45,7 @@ class NewTicketsController extends GetxController {
         'clientname': isClientNameDisabled.value
             ? 'Mohamed souei'
             : clientNameController.text,
-        'statu': isStatusDisabled.value ? 'non affecte' : statusController.text,
+        'statu': isStatusDisabled.value ? 'en cours' : statusController.text,
         'dates': selectedDate.value,
         'question': questionController.text,
         'files': filesController.text,
@@ -54,29 +54,9 @@ class NewTicketsController extends GetxController {
       };
 
       allTickets.add(newTicket); // Assuming allTickets is defined somewhere
-
-      // Clear the input fields
-      nameController.clear();
-      clientNameController.clear();
-      statusController.clear();
-      questionController.clear();
-      filesController.clear();
-      peroirteController.clear();
     } else {
       // Handle validation or show an error message
       print('Not Valid');
     }
-  }
-
-  @override
-  void onClose() {
-    // Dispose of text controllers
-    nameController.dispose();
-    clientNameController.dispose();
-    statusController.dispose();
-    questionController.dispose();
-    filesController.dispose();
-    peroirteController.dispose();
-    super.onClose();
   }
 }
